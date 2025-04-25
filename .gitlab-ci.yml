@@ -1,4 +1,5 @@
-image: node:9.4.0
+# Bookworm end of life: 2028-06-30 (https://wiki.debian.org/DebianReleases)
+image: node:lts-bookworm
 
 stages:
   - build
