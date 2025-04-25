@@ -70,7 +70,7 @@ pages:
     - test:unit
     - test:gatsby
   script:
-    - ./node_modules/.bin/gatsby build --prefix-paths
+    - NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/gatsby build --prefix-paths
   cache:
     paths:
     - .yarn
