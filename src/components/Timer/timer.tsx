@@ -36,7 +36,7 @@ export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
 
   return (<PictureInPictureContainer id={props.timer.id}>
     <div className="timer">
-      <ProgressBar percentage={percent} color='green'>
+      <ProgressBar percentage={percent} color={'green'}>
         <span>{remaining}</span>
       </ProgressBar>
 

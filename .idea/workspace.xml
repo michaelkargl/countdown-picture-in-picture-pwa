@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/WindowExtended.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Timer/timer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Timer/timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/TimerEntity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/TimerEntity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745568356890</updated>
       <workItem from="1745568358026" duration="14654000" />
-      <workItem from="1745588869303" duration="17642000" />
+      <workItem from="1745588869303" duration="18815000" />
     </task>
     <servers />
   </component>

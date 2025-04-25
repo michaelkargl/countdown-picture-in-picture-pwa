@@ -1,13 +1,15 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from "react";
+import * as mnoment from 'moment';
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+import Image from "../components/image";
+import SEO from "../components/seo";
+import { Timer } from "../components";
+import { TimerEntity } from "../models";
+import * as luxon from "luxon";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import { Timer } from "../components"
-import { TimerEntity } from "../models"
 
-// 0. PiP POC
+// ~~0. PiP POC~~
 // 1. Get timer (1)
 // 2. Show timer (1)
 // 3. Timer editor below timer
@@ -17,8 +19,8 @@ import { TimerEntity } from "../models"
 const IndexPage = () => {
     const timer: TimerEntity = {
         id: '1',
-        startTime: new Date('2025-04-25T21:40:23'),
-        endTime: new Date(),
+        startTime: luxon.DateTime.now().toJSDate(),
+        endTime: luxon.DateTime.now().plus({ minutes: 60 }).toJSDate(),
         refreshIntervalInMs: 1000
     }
 
