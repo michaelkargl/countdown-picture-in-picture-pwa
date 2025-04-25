@@ -33,12 +33,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "gatsby": "export NODE_OPTIONS=--openssl-legacy-provider || set NODE_OPTIONS=--openssl-legacy-provider && gatsby",
+    "build": "yarn run gatsby build",
+    "serve": "yarn run gatsby serve",
+    "develop": "yarn run gatsby develop",
+    "start": "yarn run gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "clean": "yarn run gatsby clean",
     "test:unit": "jest"
   },
   "repository": {
