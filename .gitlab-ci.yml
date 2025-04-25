@@ -1,5 +1,7 @@
-# Bookworm end of life: 2028-06-30 (https://wiki.debian.org/DebianReleases)
-image: node:lts-bookworm
+# LTS Bookworm (Debian 11) end of life: 2026-08-31 (https://wiki.debian.org/DebianReleases)
+# LTS Hydrogen (Node 20) end of life: 2026-04-31 (https://nodejs.org/en/about/previous-releases)
+# Using bullseye instead of bookwork due to an SSL error between node and a dependency
+image: node:hydrogen-bookworm
 
 stages:
   - build

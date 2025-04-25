@@ -23,6 +23,27 @@ documentation https://docs.gitlab.com/ce/user/project/pages/.
 - [Quick start](#-quick-start)
 - [Learning gatsby](#-learning-gatsby)
 
+## Requirements
+
+- Install node
+  1. Install _[nvm]_ (linux) or `nvm-windows`
+
+  2. ```pwsh
+     nvm install "$(cat .nvmrc)"
+     nvm use "$(cat .nvmrc)"
+     node --version
+     npm --version
+     ```
+  3. Install yarn
+
+     ```pwsh
+     npm install --global yarn
+     yarn
+     ```
+
+[nvm]: https://github.com/nvm-sh/nvm
+[nvm-windows]: https://github.com/coreybutler/nvm-windows
+
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
