@@ -18,9 +18,10 @@ cache:
 
 yarn:install:
   stage: build
-  script:
-    # Install via yarn with frozen-lockfile to allow reproducible dependencies and check-files option to check if the node_modules cache is valid.
-    - yarn install --frozen-lockfile --check-files --non-interactive
+  script: |-3
+     apk add --no-cache python3 py3-pip
+     # Install via yarn with frozen-lockfile to allow reproducible dependencies and check-files option to check if the node_modules cache is valid.  
+     yarn install --frozen-lockfile --check-files --non-interactive
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - if: $CI_MERGE_REQUEST_ID
