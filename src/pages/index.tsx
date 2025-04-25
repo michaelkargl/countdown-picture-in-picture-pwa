@@ -17,8 +17,9 @@ import { TimerEntity } from "../models"
 const IndexPage = () => {
     const timer: TimerEntity = {
         id: '1',
-        startTime: new Date('2025-04-25T16:40:23'),
-        endTime: new Date()
+        startTime: new Date('2025-04-25T21:40:23'),
+        endTime: new Date(),
+        refreshIntervalInMs: 1000
     }
 
     return (
