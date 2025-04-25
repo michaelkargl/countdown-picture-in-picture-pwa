@@ -31,9 +31,9 @@ yarn:install:
      # check-files option to check if the node_modules cache is valid.
      # Default cache directory from https://classic.yarnpkg.com/en/docs/install-ci/#gitlab.
      yarn install --frozen-lockfile --check-files --non-interactive --cache-folder .yarn
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_MERGE_REQUEST_ID
+  # rules:
+    # - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    # - if: $CI_MERGE_REQUEST_ID
   cache:
     paths:
     - .yarn
@@ -44,9 +44,9 @@ test:unit:
   needs: ["yarn:install"]
   script:
     - npm run test:unit
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_MERGE_REQUEST_ID
+#  rules:
+#    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#    - if: $CI_MERGE_REQUEST_ID
   cache:
     paths:
     - .yarn
@@ -57,9 +57,9 @@ test:gatsby:
   needs: ["yarn:install"]
   script:
     - ./node_modules/.bin/gatsby info
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_MERGE_REQUEST_ID
+#  rules:
+#    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#    - if: $CI_MERGE_REQUEST_ID
   cache:
     paths:
     - .yarn
@@ -80,5 +80,5 @@ pages:
   artifacts:
     paths:
       - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#  rules:
+#    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
