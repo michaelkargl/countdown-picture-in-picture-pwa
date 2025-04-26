@@ -117,6 +117,7 @@ function* getStyleSheets(): IterableIterator<CSSStyleSheet> {
 
 function* getCSSRules(styleSheet: CSSStyleSheet): IterableIterator<CSSRule> {
   const cssRules = styleSheet.cssRules
+
   if (!cssRules) {
     console.debug("Stylesheet does not contain any CSS rules. Skipping...")
     return

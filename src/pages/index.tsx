@@ -1,13 +1,9 @@
-import * as React from "react";
-import * as mnoment from 'moment';
-import { Link } from "gatsby";
-import Layout from "../components/layout";
-import Image from "../components/image";
-import SEO from "../components/seo";
-import { Timer } from "../components";
-import { TimerEntity } from "../models";
-import * as luxon from "luxon";
-
+import * as React from "react"
+import { Link } from "gatsby"
+import { Timer } from "../components"
+import { TimerEntity } from "../models"
+import * as luxon from "luxon"
+import Layout from "../components/layout"
 
 // ~~0. PiP POC~~
 // 1. Get timer (1)
@@ -17,29 +13,22 @@ import * as luxon from "luxon";
 // 5. Refactor to support n timers
 
 const IndexPage = () => {
-    const timer: TimerEntity = {
-        id: '1',
-        startTime: luxon.DateTime.now().toJSDate(),
-        endTime: luxon.DateTime.now().plus({ minutes: 60 }).toJSDate(),
-        refreshIntervalInMs: 1000
-    }
+  const timer: TimerEntity = {
+    id: "1",
+    startTime: luxon.DateTime.now().toJSDate(),
+    endTime: luxon.DateTime.now().plus({ minutes: 60 }).toJSDate(),
+    refreshIntervalInMs: 1000,
+  }
 
-    return (
-      <Layout>
-          <SEO title="Home" />
-          <h1>Hi people</h1>
-          <p>Welcome to your new Gatsby site.</p>
-          <p>Now go build something great.</p>
-          <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-              <Image />
-          </div>
-          <Link to="/page-2/">Go to page 2</Link>
+  return (
+    <Layout>
+      <hr />
 
-          <hr />
+      <Timer timer={timer}></Timer>
 
-          <Timer timer={timer}></Timer>
-      </Layout>
-    )
+      <Link to="/page-2/">Go to page 2</Link>
+    </Layout>
+  )
 }
 
 export default IndexPage

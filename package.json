@@ -21,8 +21,9 @@
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
-    "@types/react-dom": "^16.12.0",
+    "@types/luxon": "^3.6.2",
     "@types/react": "^16.12.0",
+    "@types/react-dom": "^16.12.0",
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^0.4.1",
     "identity-obj-proxy": "^3.0.0",
