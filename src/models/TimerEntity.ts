@@ -1,6 +1,8 @@
+import { DateTime } from "luxon"
+
 export interface TimerEntity {
   id: string
   refreshIntervalInMs: number
-  startTime: Date
-  endTime: Date
+  startTime: DateTime
+  endTime: DateTime
 }

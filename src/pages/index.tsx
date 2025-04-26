@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { Timer } from "../components"
 import { TimerEntity } from "../models"
-import * as luxon from "luxon"
+import { DateTime} from "luxon"
 import Layout from "../components/layout"
 
 // ~~0. PiP POC~~
@@ -15,15 +15,14 @@ import Layout from "../components/layout"
 const IndexPage = () => {
   const timer: TimerEntity = {
     id: "1",
-    startTime: luxon.DateTime.now().toJSDate(),
-    endTime: luxon.DateTime.now().plus({ minutes: 60 }).toJSDate(),
+    startTime: DateTime.now(),
+    endTime: DateTime.now().plus({ minutes: 60 }),
     refreshIntervalInMs: 1000,
   }
 
   return (
     <Layout>
       <hr />
-
       <Timer timer={timer}></Timer>
 
       <Link to="/page-2/">Go to page 2</Link>
