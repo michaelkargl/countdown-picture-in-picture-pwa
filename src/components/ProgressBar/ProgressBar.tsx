@@ -7,6 +7,7 @@ import { TimerEntity } from "../../models"
 type ProgressBarProps = PropsWithChildren<{
   timer: TimerEntity
   percentage: number
+  label: string
 }>
 
 export const ProgressBar: React.FC<ProgressBarProps> = (
@@ -22,7 +23,10 @@ export const ProgressBar: React.FC<ProgressBarProps> = (
           }}
           className="progress-bar"
         >
-          {props.percentage} %
+          <div className="timer-label-overlay">
+            <span className="timer-percent">{props.percentage}</span>
+            <span className="timer-label">{props.label}</span>
+          </div>
         </div>
       </div>
     </>

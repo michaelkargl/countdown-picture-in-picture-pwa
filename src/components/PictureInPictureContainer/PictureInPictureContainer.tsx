@@ -2,7 +2,7 @@ import * as React from "react"
 import { PropsWithChildren, useMemo } from "react"
 import { WindowExtended } from "../../models/WindowExtended"
 import "./PictureInPictureContainer.css"
-import { ResourceNotFoundException } from "../../exceptions"
+import { Exception, ResourceNotFoundException } from "../../exceptions"
 
 type PictureInPictureClosedCallback = () => void
 type PictureInPictureContainerProps = PropsWithChildren<{
@@ -15,10 +15,11 @@ export const PictureInPictureContainer: React.FC<PictureInPictureContainerProps>
   // no need to re-calculate evertime -> memoize
   const pipContainerId = useMemo(() => getPipContainerId(props.id), [props.id])
   const pipButtonId = useMemo(() => getPipButtonId(props.id), [props.id])
+  const pipDocumentId = useMemo(() => getPipDocumentClass(props.id), [props.id])
 
   return (
-    <div className='pip-container'>
-      <div className="pip-container" id={pipContainerId}>
+    <div className="pip-container" id={pipContainerId}>
+      <div className={pipDocumentId}>
         <button
           className="pip-button"
           id={pipButtonId}
@@ -37,18 +38,28 @@ function getPipContainerId(id: string): string {
   return `pip-container-${id}`
 }
 
+function getPipDocumentClass(id: string): string {
+  console.count(`getPipDocumentClass ${id}`)
+  return `pip-document-${id}`
+}
+
+function findPipDocuments(pipId: string, searchRoot = document.documentElement): HTMLDivElement[] {
+  const pipDocumentClass = getPipDocumentClass(pipId);
+  const pipDocuments = searchRoot.querySelectorAll(`.${pipDocumentClass}`)
+  return [...pipDocuments]
+}
+
 function getPipButtonId(id: string): string {
   console.count(`getPipButtonId ${id}`)
   return `pip-button-${id}`
 }
 
 function getPipButton(pipId: string, searchRoot: HTMLElement = document.documentElement): HTMLButtonElement {
-  const buttonId = getPipButtonId(pipId);
-  const pipButtonId = getPipButtonId(buttonId);
+  const buttonId = getPipButtonId(pipId)
   const pipButton = searchRoot.querySelector(`#${buttonId}`)
-  ResourceNotFoundException.ThrowIfNullOrUndefined(pipButton, 'pipButton');
+  ResourceNotFoundException.ThrowIfNullOrUndefined(pipButton, "pipButton")
 
-  return pipButton;
+  return pipButton
 }
 
 function onPictureInPictureClose(callback: PictureInPictureClosedCallback) {
@@ -68,8 +79,8 @@ function onPictureInPictureClose(callback: PictureInPictureClosedCallback) {
 }
 
 function hidePipButton(pipId: string, searchRoot = document.documentElement) {
-  const button = getPipButton(pipId, searchRoot);
-    button.setAttribute('visibility', 'hidden');
+  const button = getPipButton(pipId, searchRoot)
+  button.setAttribute("visibility", "hidden")
 }
 
 /**
@@ -85,21 +96,19 @@ async function showPictureInPictureAsync(pipId: string): Promise<void> {
 
   const pipContainerId = getPipContainerId(pipId)
   const pipContainer = document.querySelector(`#${pipContainerId}`)
-  ResourceNotFoundException.ThrowIfNullOrUndefined(pipContainer, 'pipContainer');
+  ResourceNotFoundException.ThrowIfNullOrUndefined(pipContainer, "pipContainer")
 
-  const pipDocument = pipContainer.firstChild
-  ResourceNotFoundException.ThrowIfNullOrUndefined(pipDocument, 'pipDocument');
-
-  const clonedContainer = pipContainer?.cloneNode(true);
-  ResourceNotFoundException.ThrowIfNullOrUndefined(clonedContainer, 'cloneContainer');
+  const pipDocuments = findPipDocuments(pipId, pipContainer as HTMLElement)
+  ResourceNotFoundException.ThrowIfEmptyOrFalsy(pipDocuments, 'pipDocuments');
 
   const pipWindow = await window.documentPictureInPicture.requestWindow()
-  pipWindow.document.documentElement.id = 'picture-in-picture';
+  pipWindow.document.documentElement.id = "picture-in-picture"
   copyStylesTo(document.documentElement, pipWindow.document.documentElement)
-  pipWindow.document.body.append(clonedContainer)
+  pipWindow.document.body.append(pipDocuments[0])
 
   onPictureInPictureClose(() => {
-    console.debug("Picture in Picture closed");
+    console.debug("Picture in Picture closed")
+    pipContainer?.append(pipWindow.document.body)
   })
 
   if (!supportsPictureInPicture(window)) {

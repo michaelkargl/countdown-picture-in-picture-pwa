@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Timer } from "../components"
+import { PictureInPictureContainer, Timer } from "../components"
 import { TimerEntity } from "../models"
 import { DateTime } from "luxon"
 import Layout from "../components/layout"
@@ -18,12 +18,14 @@ const IndexPage = () => {
     {
       id: "1",
       color: "green",
+      name: "green",
       startTime: DateTime.now(),
       endTime: DateTime.now().plus({ minutes: 60 }),
       refreshIntervalInMs: 1000,
     },
     {
       id: "2",
+      name: 'red',
       color: "red",
       startTime: DateTime.now(),
       endTime: DateTime.now().plus({ minutes: 40 }),
@@ -32,6 +34,7 @@ const IndexPage = () => {
     {
       id: "3",
       color: "cyan",
+      name: "cyan",
       startTime: DateTime.now(),
       endTime: DateTime.now().plus({ minutes: 20 }),
       refreshIntervalInMs: 1000,
@@ -39,8 +42,17 @@ const IndexPage = () => {
     {
       id: "4",
       color: "magenta",
+      name: "magenta",
       startTime: DateTime.now(),
       endTime: DateTime.now().plus({ minutes: 1 }),
+      refreshIntervalInMs: 1000,
+    },
+    {
+      id: "5",
+      color: "orange",
+      name: "orange",
+      startTime: DateTime.now(),
+      endTime: DateTime.now().plus({ seconds: 6 }),
       refreshIntervalInMs: 1000,
     },
   ]
@@ -48,12 +60,15 @@ const IndexPage = () => {
   return (
     <Layout>
       <hr />
-      <div className="timer-container">
-        {timers.map((timer, index) => <Timer key={`timer-${index}`} timer={timer}/>)}
+      <PictureInPictureContainer id='test'>
+        <div className="timer-container">
+          {timers.map((timer, index) => (
+            <Timer key={`timer-${index}`} timer={timer} />
+          ))}
+        </div>
 
-      </div>
-
-      <Link to="/page-2/">Go to page 2</Link>
+        <Link to="/page-2/">Go to page 2</Link>
+      </PictureInPictureContainer>
     </Layout>
   )
 }

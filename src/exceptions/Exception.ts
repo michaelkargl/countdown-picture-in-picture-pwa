@@ -18,10 +18,15 @@ export class Exception extends Error {
     }
   }
 
-  public static ThrowIfNot(value: boolean | ValueProvider<boolean>, message: Exception) {
-    if (typeof value === "boolean") {
-      value = (() => value) as ValueProvider<boolean>
+  public static ThrowIfNot(value: boolean | ValueProvider<boolean>, exception: Exception) {
+    if (typeof value === "function") {
+      value = (value as ValueProvider<boolean>)();
     }
-    return this.ThrowIf(() => !value(), message)
+
+    if (!value) {
+      console.error('%s. Value [%o].', exception, value);
+    }
+
+    return this.ThrowIf(!value, exception);
   }
 }

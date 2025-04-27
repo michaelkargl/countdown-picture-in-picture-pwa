@@ -1,12 +1,10 @@
 import * as React from "react"
 import { TimerEntity } from "../../models"
-import { PictureInPictureContainer } from "../PictureInPictureContainer/PictureInPictureContainer"
 import { ProgressBar } from "../ProgressBar/ProgressBar"
 import "./timer.css"
 import { DateTime } from "luxon"
 import Countdown, { CountdownRenderProps } from "react-countdown"
 import { CountdownRendererFn } from "react-countdown/dist/Countdown"
-import { useEffect } from "react"
 
 export type TimerProps = {
   timer: TimerEntity
@@ -17,34 +15,30 @@ export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
     rendererProps: CountdownRenderProps
   ) => {
     const { hours, minutes, seconds, completed } = rendererProps
-
-    if (completed) {
-      return <span>Timer finished 🎇</span>
-    }
-
     const percent = getTimerPercentage(props.timer) * 100
+
     return (
-      <ProgressBar percentage={percent} timer={props.timer}>
-        <span>
-          {hours}:{minutes}:{seconds} | {percent}
-        </span>
+      <ProgressBar percentage={percent} label={`${hours}:${minutes}:${seconds}`} timer={props.timer}>
+        <ProgressBar
+          percentage={0}
+          label='Timer finished 🎇'
+          timer={props.timer}/>
       </ProgressBar>
     )
   }
 
   return (
-    <PictureInPictureContainer id={props.timer.id}>
-      <div className="timer">
-        <Countdown
-          date={props.timer.endTime.toJSDate()}
-          intervalDelay={props.timer.refreshIntervalInMs}
-          renderer={renderer}
-          precision={2}
-        >
-          <span>Timer finished</span>
-        </Countdown>
-      </div>
-    </PictureInPictureContainer>
+    <div className="timer">
+      <Countdown
+        date={props.timer.endTime.toJSDate()}
+        intervalDelay={props.timer.refreshIntervalInMs}
+        renderer={renderer}
+        precision={2}
+        autoStart={true}
+      >
+        <span>Timer finished</span>
+      </Countdown>
+    </div>
   )
 }
 
