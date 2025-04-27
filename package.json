@@ -5,15 +5,15 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^3.0.0",
-    "gatsby-image": "^3.0.0",
-    "gatsby-plugin-manifest": "^3.0.0",
-    "gatsby-plugin-offline": "^4.0.0",
-    "gatsby-plugin-react-helmet": "^4.0.0",
-    "gatsby-plugin-sass": "^4.0.0",
-    "gatsby-plugin-sharp": "^3.0.0",
-    "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-sharp": "^3.0.0",
+    "gatsby": "^4.0.0",
+    "gatsby-plugin-image": "^2.0.0",
+    "gatsby-plugin-manifest": "^4.0.0",
+    "gatsby-plugin-offline": "^5.0.0",
+    "gatsby-plugin-react-helmet": "^5.0.0",
+    "gatsby-plugin-sass": "^5.0.0",
+    "gatsby-plugin-sharp": "^4.0.0",
+    "gatsby-source-filesystem": "^4.0.0",
+    "gatsby-transformer-sharp": "^4.0.0",
     "luxon": "^3.0.0",
     "moment": "^2.0.0",
     "prop-types": "^15.0.0",
@@ -37,7 +37,8 @@
     "prettier": "2.0.5",
     "react-test-renderer": "^16.13.1",
     "typescript": "^4.0.0",
-    "webpack": "^5.0.0"
+    "webpack": "^5.0.0",
+    "eslint": "^5.0.0"
   },
   "keywords": [
     "gatsby",
@@ -46,7 +47,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "gatsby": "export NODE_OPTIONS=--openssl-legacy-provider || set NODE_OPTIONS=--openssl-legacy-provider && gatsby",
+    "gatsby": "gatsby",
     "build": "yarn run gatsby build",
     "serve": "yarn run gatsby serve",
     "develop": "yarn run gatsby develop",
