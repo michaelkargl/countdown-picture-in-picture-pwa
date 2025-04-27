@@ -35,7 +35,9 @@ const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
+        <main style={{
+          height: '100%'
+        }}>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

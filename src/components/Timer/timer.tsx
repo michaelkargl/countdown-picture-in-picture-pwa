@@ -6,6 +6,7 @@ import "./timer.css"
 import { DateTime } from "luxon"
 import Countdown, { CountdownRenderProps } from "react-countdown"
 import { CountdownRendererFn } from "react-countdown/dist/Countdown"
+import { useEffect } from "react"
 
 export type TimerProps = {
   timer: TimerEntity
@@ -23,7 +24,7 @@ export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
 
     const percent = getTimerPercentage(props.timer) * 100
     return (
-      <ProgressBar percentage={percent} color={"green"}>
+      <ProgressBar percentage={percent} timer={props.timer}>
         <span>
           {hours}:{minutes}:{seconds} | {percent}
         </span>

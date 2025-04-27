@@ -5,4 +5,5 @@ export interface TimerEntity {
   refreshIntervalInMs: number
   startTime: DateTime
   endTime: DateTime
+  color: string
 }
