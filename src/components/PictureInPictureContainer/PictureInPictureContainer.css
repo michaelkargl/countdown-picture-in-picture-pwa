@@ -1,0 +1,18 @@
+.pip-container {
+    position: relative;
+}
+
+.pip-container:hover {
+    border: 1px dotted #000;
+}
+
+.pip-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: visible;
+}
+
+#picture-in-picture .pip-button {
+    visibility: hidden;
+}
