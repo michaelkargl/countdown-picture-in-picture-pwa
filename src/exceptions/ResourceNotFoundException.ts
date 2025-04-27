@@ -8,10 +8,10 @@ export class ResourceNotFoundException extends Error {
     this.name = "ResourceNotFoundException"
   }
 
-  public static ThrowIfEmptyOrFalsy(collection: Array<unknown>) {
+  public static ThrowIfEmptyOrFalsy(collection: unknown[], name: string): void {
     Exception.ThrowIfNot(
       () => collection?.length > 0,
-      new ResourceNotFoundException('Collection is empty or falsy!')
+      new ResourceNotFoundException(`Collection [${name}] is empty or falsy!`)
     );
   }
 

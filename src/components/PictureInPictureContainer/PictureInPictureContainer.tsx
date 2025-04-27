@@ -1,8 +1,8 @@
 import * as React from "react"
 import { PropsWithChildren, useMemo } from "react"
 import { WindowExtended } from "../../models/WindowExtended"
-import "./PictureInPictureContainer.css"
 import { Exception, ResourceNotFoundException } from "../../exceptions"
+import "./PictureInPictureContainer.scss"
 
 type PictureInPictureClosedCallback = () => void
 type PictureInPictureContainerProps = PropsWithChildren<{
@@ -43,10 +43,10 @@ function getPipDocumentClass(id: string): string {
   return `pip-document-${id}`
 }
 
-function findPipDocuments(pipId: string, searchRoot = document.documentElement): HTMLDivElement[] {
+function findPipDocuments(pipId: string, searchRoot = document.documentElement): Element[] {
   const pipDocumentClass = getPipDocumentClass(pipId);
   const pipDocuments = searchRoot.querySelectorAll(`.${pipDocumentClass}`)
-  return [...pipDocuments]
+  return Array.from(pipDocuments);
 }
 
 function getPipButtonId(id: string): string {
@@ -57,9 +57,9 @@ function getPipButtonId(id: string): string {
 function getPipButton(pipId: string, searchRoot: HTMLElement = document.documentElement): HTMLButtonElement {
   const buttonId = getPipButtonId(pipId)
   const pipButton = searchRoot.querySelector(`#${buttonId}`)
-  ResourceNotFoundException.ThrowIfNullOrUndefined(pipButton, "pipButton")
 
-  return pipButton
+  ResourceNotFoundException.ThrowIfNullOrUndefined(pipButton, "pipButton")
+  return pipButton!;
 }
 
 function onPictureInPictureClose(callback: PictureInPictureClosedCallback) {

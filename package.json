@@ -10,6 +10,7 @@
     "gatsby-plugin-manifest": "^2.4.2",
     "gatsby-plugin-offline": "^3.2.1",
     "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-plugin-sass": "^6.14.0",
     "gatsby-plugin-sharp": "^2.6.2",
     "gatsby-source-filesystem": "^2.3.1",
     "gatsby-transformer-sharp": "^2.5.2",
@@ -20,7 +21,8 @@
     "react-countdown": "^2.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^6.0.0",
-    "roughjs": "^4.0.0"
+    "roughjs": "^4.0.0",
+    "sass": "^1.87.0"
   },
   "devDependencies": {
     "@types/luxon": "^3.0.0",
