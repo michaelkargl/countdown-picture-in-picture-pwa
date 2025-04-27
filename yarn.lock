@@ -11784,6 +11784,13 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-countdown@^2.3.6:
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/react-countdown/-/react-countdown-2.3.6.tgz#26699ea87e548bd7c981281e5a8fd8b511f774ff"
+  integrity sha512-ZfX6S08Hb6x6W6eCn1hMDvxPICI/T30fd+gaeVTCR/2cGZ2WJ3f26e4ImNIMX1fHkopJrUdnRpWXP13/D39+gg==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-dev-utils@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.3.tgz#5b42d9ea58d5e9e017a2f57a40a8af408a3a46fb"
