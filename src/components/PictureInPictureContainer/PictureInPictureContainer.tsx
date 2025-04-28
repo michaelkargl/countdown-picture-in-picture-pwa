@@ -21,7 +21,7 @@ export const PictureInPictureContainer: React.FC<PictureInPictureContainerProps>
     <div className="pip-container" id={pipContainerId}>
       <div className={pipDocumentId}>
         <button
-          className="pip-button"
+          className="pip-button pip-hidden"
           id={pipButtonId}
           onClick={() => showPictureInPictureAsync(props.id)}
         >
@@ -43,10 +43,13 @@ function getPipDocumentClass(id: string): string {
   return `pip-document-${id}`
 }
 
-function findPipDocuments(pipId: string, searchRoot = document.documentElement): Element[] {
-  const pipDocumentClass = getPipDocumentClass(pipId);
+function findPipDocuments(
+  pipId: string,
+  searchRoot = document.documentElement
+): Element[] {
+  const pipDocumentClass = getPipDocumentClass(pipId)
   const pipDocuments = searchRoot.querySelectorAll(`.${pipDocumentClass}`)
-  return Array.from(pipDocuments);
+  return Array.from(pipDocuments)
 }
 
 function getPipButtonId(id: string): string {
@@ -54,12 +57,17 @@ function getPipButtonId(id: string): string {
   return `pip-button-${id}`
 }
 
-function getPipButton(pipId: string, searchRoot: HTMLElement = document.documentElement): HTMLButtonElement {
+function getPipButton(
+  pipId: string,
+  searchRoot: HTMLElement = document.documentElement
+): HTMLButtonElement {
   const buttonId = getPipButtonId(pipId)
-  const pipButton = searchRoot.querySelector(`#${buttonId}`)
+  const pipButton: HTMLButtonElement | null = searchRoot.querySelector(
+    `#${buttonId}`
+  )
 
   ResourceNotFoundException.ThrowIfNullOrUndefined(pipButton, "pipButton")
-  return pipButton!;
+  return pipButton!
 }
 
 function onPictureInPictureClose(callback: PictureInPictureClosedCallback) {
@@ -70,17 +78,17 @@ function onPictureInPictureClose(callback: PictureInPictureClosedCallback) {
   const pipWindow = window.documentPictureInPicture.window
   if (!pipWindow) {
     console.debug("No Picture in Picture window found / none seems to be open")
-    return;
+    return
   }
 
   pipWindow.addEventListener("pagehide", event => {
-    callback();
+    callback()
   })
 }
 
 function hidePipButton(pipId: string, searchRoot = document.documentElement) {
-  const button = getPipButton(pipId, searchRoot);
-  button.setAttribute("visibility", "hidden");
+  const button = getPipButton(pipId, searchRoot)
+  button.setAttribute("visibility", "hidden")
 }
 
 /**
@@ -91,87 +99,87 @@ function hidePipButton(pipId: string, searchRoot = document.documentElement) {
  */
 async function showPictureInPictureAsync(pipId: string): Promise<void> {
   if (!supportsPictureInPicture(window)) {
-    throw new Error("The current browser does not support Picture in Picture");
+    throw new Error("The current browser does not support Picture in Picture")
   }
 
-  const pipContainerId = getPipContainerId(pipId);
-  const pipContainer = document.querySelector(`#${pipContainerId}`);
-  ResourceNotFoundException.ThrowIfNullOrUndefined(pipContainer, "pipContainer");
+  const pipContainerId = getPipContainerId(pipId)
+  const pipContainer = document.querySelector(`#${pipContainerId}`)
+  ResourceNotFoundException.ThrowIfNullOrUndefined(pipContainer, "pipContainer")
 
-  const pipDocuments = findPipDocuments(pipId, pipContainer as HTMLElement);
-  ResourceNotFoundException.ThrowIfEmptyOrFalsy(pipDocuments, "pipDocuments");
+  const pipDocuments = findPipDocuments(pipId, pipContainer as HTMLElement)
+  ResourceNotFoundException.ThrowIfEmptyOrFalsy(pipDocuments, "pipDocuments")
 
-  const pipWindow = await window.documentPictureInPicture.requestWindow();
-  pipWindow.document.documentElement.id = "picture-in-picture";
-  copyStylesTo(document.documentElement, pipWindow.document.documentElement);
-  pipWindow.document.body.append(pipDocuments[0]);
+  const pipWindow = await window.documentPictureInPicture.requestWindow()
+  pipWindow.document.documentElement.id = "picture-in-picture"
+  copyStylesTo(document.documentElement, pipWindow.document.documentElement)
+  pipWindow.document.body.append(pipDocuments[0])
 
   onPictureInPictureClose(() => {
-    console.debug("Picture in Picture closed");
-    pipContainer?.append(pipWindow.document.body);
-  });
+    console.debug("Picture in Picture closed")
+    pipContainer?.append(pipWindow.document.body)
+  })
 
   if (!supportsPictureInPicture(window)) {
-    throw new Error("The current browser does not support Picture in Picture");
+    throw new Error("The current browser does not support Picture in Picture")
   }
 }
 
 function supportsPictureInPicture(win: object): win is WindowExtended {
-  const extWindow = (win as any) as WindowExtended;
-  return !!extWindow && !!extWindow.documentPictureInPicture;
+  const extWindow = (win as any) as WindowExtended
+  return !!extWindow && !!extWindow.documentPictureInPicture
 }
 
 function* getStyleSheets(): IterableIterator<CSSStyleSheet> {
-  const styleSheets = document.styleSheets;
+  const styleSheets = document.styleSheets
   for (let i = 0; i < styleSheets.length; i++) {
-    yield styleSheets[i];
+    yield styleSheets[i]
   }
 }
 
 function* getCSSRules(styleSheet: CSSStyleSheet): IterableIterator<CSSRule> {
-  const cssRules = styleSheet.cssRules;
+  const cssRules = styleSheet.cssRules
 
   if (!cssRules) {
-    console.debug("Stylesheet does not contain any CSS rules. Skipping...");
-    return;
+    console.debug("Stylesheet does not contain any CSS rules. Skipping...")
+    return
   }
 
   for (let i = 0; i < cssRules.length; i++) {
-    yield cssRules[i];
+    yield cssRules[i]
   }
 }
 
 function getCSSRulesAsArray(styleSheet: CSSStyleSheet): CSSRule[] {
-  const rules: CSSRule[] = [];
+  const rules: CSSRule[] = []
   for (const rule of getCSSRules(styleSheet)) {
-    rules.push(rule);
+    rules.push(rule)
   }
-  return rules;
+  return rules
 }
 
 function copyStylesTo(source: HTMLElement, destination: HTMLElement) {
   for (let sheet of getStyleSheets()) {
     if (!sheet.cssRules) {
-      continue;
+      continue
     }
 
-    const cssRuleArray = getCSSRulesAsArray(sheet);
+    const cssRuleArray = getCSSRulesAsArray(sheet)
     if (!cssRuleArray?.length) {
-      continue;
+      continue
     }
 
     try {
-      const cssRules = cssRuleArray.map(rule => rule.cssText).join("");
-      const style = document.createElement("style");
-      style.textContent = cssRules;
-      destination.ownerDocument.head.appendChild(style);
+      const cssRules = cssRuleArray.map(rule => rule.cssText).join("")
+      const style = document.createElement("style")
+      style.textContent = cssRules
+      destination.ownerDocument.head.appendChild(style)
     } catch (ex) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = sheet.type;
-      link.media = sheet.media.mediaText;
-      link.href = link.href;
-      destination.ownerDocument.head.appendChild(link);
+      const link = document.createElement("link")
+      link.rel = "stylesheet"
+      link.type = sheet.type
+      link.media = sheet.media.mediaText
+      link.href = link.href
+      destination.ownerDocument.head.appendChild(link)
     }
   }
 }

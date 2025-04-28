@@ -5,13 +5,16 @@ import "./timer.css"
 import { DateTime } from "luxon"
 import Countdown, { CountdownRenderProps } from "react-countdown"
 import { CountdownRendererFn } from "react-countdown/dist/Countdown"
-import { pad } from '../../utils'
+import { pad } from "../../utils"
+import { EditableProgressBar } from "../ProgressBar/EditableProgressBar"
 
 export type TimerProps = {
-  timer: TimerEntity
+  timer: TimerEntity,
+  timerChanged: (timer: Readonly<TimerEntity>) => void
 }
 
 export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
+
   const renderer: CountdownRendererFn = (
     rendererProps: CountdownRenderProps
   ) => {
@@ -19,13 +22,17 @@ export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
     const percent = getTimerPercentage(props.timer) * 100
     let label = `${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`
 
+    function timerChanged(timer: Readonly<TimerEntity>): void {
+      props.timerChanged({...timer});
+    }
+
     return (
-      <ProgressBar percentage={percent} label={label} timer={props.timer}>
+      <EditableProgressBar percentage={percent} label={label} timer={props.timer} timerChanged={timerChanged}>
         <ProgressBar
           percentage={0}
           label='Timer finished 🎇'
           timer={props.timer}/>
-      </ProgressBar>
+      </EditableProgressBar>
     )
   }
 

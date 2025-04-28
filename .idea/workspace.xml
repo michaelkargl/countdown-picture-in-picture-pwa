@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: refactors to use luxon" />
+    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: makes the ui pretty and adds editor capabilities" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -41,7 +41,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feat/countdown-timer-poc",
+    "git-widget-placeholder": "feat/create-persisted-timers",
     "last_opened_file_path": "G:/BACKUPS/Workspace/react-space/countdown-picture-in-picture-pwa",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -50,8 +50,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\kami\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -78,6 +78,7 @@
       <workItem from="1745568358026" duration="14654000" />
       <workItem from="1745588869303" duration="18815000" />
       <workItem from="1745663490493" duration="11797000" />
+      <workItem from="1745771796993" duration="28511000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upgrades used typescript version so that we can use generators">
       <option name="closed" value="true" />
@@ -103,7 +104,111 @@
       <option name="project" value="LOCAL" />
       <updated>1745699969640</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="chore: gatsby upgrade from v2 -&gt; v3">
+      <option name="closed" value="true" />
+      <created>1745797140664</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745797140664</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore: gatsby upgrade from v3 -&gt; v4">
+      <option name="closed" value="true" />
+      <created>1745797804823</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745797804823</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore: gatsby upgrade from v3 -&gt; v4">
+      <option name="closed" value="true" />
+      <created>1745797929823</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745797929823</updated>
+    </task>
+    <task id="LOCAL-00007" summary="chore: gatsby upgrade from v4 -&gt; v5">
+      <option name="closed" value="true" />
+      <created>1745798496932</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745798496932</updated>
+    </task>
+    <task id="LOCAL-00008" summary="chore: gatsby upgrade from v4 -&gt; v5">
+      <option name="closed" value="true" />
+      <created>1745799057717</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745799057717</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chore: gatsby upgrade from v4 -&gt; v5">
+      <option name="closed" value="true" />
+      <created>1745799151641</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745799151641</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: installs chakra ui support">
+      <option name="closed" value="true" />
+      <created>1745800721022</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745800721022</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: installs chakra ui support">
+      <option name="closed" value="true" />
+      <created>1745800902999</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745800902999</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: replaces custom progress bar with chakraui bars&#10;feat: adds mono font&#10;chore: adds padding towards footer">
+      <option name="closed" value="true" />
+      <created>1745804381719</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745804381719</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: enables the toggling of dark mode">
+      <option name="closed" value="true" />
+      <created>1745805666989</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745805666989</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: enables the toggling of dark mode">
+      <option name="closed" value="true" />
+      <created>1745806499557</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745806499557</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: adds padding and reduces box jumping on hover">
+      <option name="closed" value="true" />
+      <created>1745807744966</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1745807744966</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: makes the ui pretty and adds editor capabilities">
+      <option name="closed" value="true" />
+      <created>1745859144850</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1745859144850</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +241,26 @@
     <MESSAGE value="feat: upgrades used typescript version so that we can use generators" />
     <MESSAGE value="feat: copies styling when opening pip" />
     <MESSAGE value="feat: refactors to use luxon" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactors to use luxon" />
+    <MESSAGE value="chore: gatsby upgrade from v2 -&gt; v3" />
+    <MESSAGE value="chore: gatsby upgrade from v3 -&gt; v4" />
+    <MESSAGE value="chore: gatsby upgrade from v4 -&gt; v5" />
+    <MESSAGE value="feat: installs chakra ui support" />
+    <MESSAGE value="feat: replaces custom progress bar with chakraui bars&#10;feat: adds mono font&#10;chore: adds padding towards footer" />
+    <MESSAGE value="feat: enables the toggling of dark mode" />
+    <MESSAGE value="feat: adds padding and reduces box jumping on hover" />
+    <MESSAGE value="feat: makes the ui pretty and adds editor capabilities" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: makes the ui pretty and adds editor capabilities" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx</url>
+          <line>60</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

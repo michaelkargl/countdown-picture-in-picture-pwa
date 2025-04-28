@@ -6,6 +6,7 @@ import { DateTime } from "luxon"
 import Layout from "../components/layout"
 import "./index.css"
 import { ColorModeButton } from "../components/ui/color-mode"
+import { useState } from "react"
 
 // ~~0. PiP POC~~
 // 1. Get timer (1)
@@ -15,7 +16,7 @@ import { ColorModeButton } from "../components/ui/color-mode"
 // 5. Refactor to support n timers
 
 const IndexPage = () => {
-  const timers: TimerEntity[] = [
+  const [timers, setTimers] = useState<readonly TimerEntity[]>([
     {
       id: "1",
       color: "green",
@@ -26,7 +27,7 @@ const IndexPage = () => {
     },
     {
       id: "2",
-      name: 'red',
+      name: "red",
       color: "red",
       startTime: DateTime.now(),
       endTime: DateTime.now().plus({ minutes: 40 }),
@@ -56,15 +57,24 @@ const IndexPage = () => {
       endTime: DateTime.now().plus({ seconds: 6 }),
       refreshIntervalInMs: 1000,
     },
-  ]
+  ])
+
+  function timerChanged(timer: Readonly<TimerEntity>): void {
+    console.log("Timer changed", timer)
+    setTimers(timers.map(t => (t.id === timer.id ? timer : t)));
+  }
 
   return (
     <Layout>
       <hr />
-      <PictureInPictureContainer id='test'>
+      <PictureInPictureContainer id="test">
         <div className="timer-container">
           {timers.map((timer, index) => (
-            <Timer key={`timer-${index}`} timer={timer} />
+            <Timer
+              key={`timer-${index}`}
+              timer={timer}
+              timerChanged={timerChanged}
+            />
           ))}
         </div>
       </PictureInPictureContainer>

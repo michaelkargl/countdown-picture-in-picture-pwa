@@ -1,11 +1,10 @@
 import * as React from "react"
-import Rough from "roughjs"
-import { PropsWithChildren, useEffect } from "react"
+import { PropsWithChildren, ReactElement } from "react"
 import "./ProgressBar.css"
 import { TimerEntity } from "../../models"
 import { HStack, Progress } from "@chakra-ui/react"
 
-type ProgressBarProps = PropsWithChildren<{
+export type ProgressBarProps = PropsWithChildren<{
   timer: TimerEntity
   percentage: number
   label: string
