@@ -8,7 +8,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Header } from "./header"
-import { ChakraUiProvider } from "../components/ui/chakra-ui-provider"
+import { ChakraUiProvider } from "./ui/chakra-ui-provider"
+import '@fontsource/fusion-pixel-12px-monospaced-jp';
 import "./layout.scss"
 
 type LayoutProps = React.PropsWithChildren<{}>

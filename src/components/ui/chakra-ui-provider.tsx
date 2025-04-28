@@ -6,11 +6,14 @@ import {
   ColorModeProvider,
   type ColorModeProviderProps,
 } from "./color-mode"
+import { ThemeProvider } from "next-themes"
 
 export function ChakraUiProvider(props: ColorModeProviderProps) {
   return (
     <ChakraProvider value={defaultSystem}>
-      <ColorModeProvider {...props} />
+      <ThemeProvider enableSystem={true}>
+        <ColorModeProvider {...props} />
+      </ThemeProvider>
     </ChakraProvider>
   )
 }

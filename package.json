@@ -7,6 +7,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.16.1",
     "@emotion/react": "^11.14.0",
+    "@fontsource/fusion-pixel-12px-monospaced-jp": "^5.2.5",
     "gatsby": "^5.0.0",
     "gatsby-plugin-image": "^3 .0.0",
     "gatsby-plugin-manifest": "^5.0.0",

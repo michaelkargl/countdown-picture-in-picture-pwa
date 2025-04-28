@@ -1330,6 +1330,11 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.9.tgz#50dea3616bc8191fb8e112283b49eaff03e78429"
   integrity sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==
 
+"@fontsource/fusion-pixel-12px-monospaced-jp@^5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/fusion-pixel-12px-monospaced-jp/-/fusion-pixel-12px-monospaced-jp-5.2.5.tgz#02bba8c64deb2cbf5c29b3a909b2194bd201b5e3"
+  integrity sha512-gcay8eMXvB2hULCLkkV0Hke2L5SPkIsV+MjiRxfztMf2hwwvyy6ud6UUPEmDwPp8owTCg937KYRip8yw1Q21rg==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@2.14.0":
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.14.0.tgz#46556c54c7c958528c1fdf9bda2a3d96886bdd2c"
