@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@chakra-ui/react": "^3.16.1",
+    "@emotion/react": "^11.14.0",
     "gatsby": "^5.0.0",
     "gatsby-plugin-image": "^3 .0.0",
     "gatsby-plugin-manifest": "^5.0.0",
@@ -16,11 +18,13 @@
     "gatsby-transformer-sharp": "^5.0.0",
     "luxon": "^3.0.0",
     "moment": "^2.0.0",
+    "next-themes": "^0.4.6",
     "prop-types": "^15.0.0",
     "react": "^18.0.0",
     "react-countdown": "^2.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.0.0",
+    "react-icons": "^5.5.0",
     "roughjs": "^4.0.0",
     "sass": "^1.0.0"
   },
@@ -32,13 +36,13 @@
     "babel-eslint": "^10.0.0",
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^3.0.0",
+    "eslint": "^5.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.1",
     "prettier": "2.0.5",
     "react-test-renderer": "^18.0.0",
     "typescript": "^4.0.0",
-    "webpack": "^5.0.0",
-    "eslint": "^5.0.0"
+    "webpack": "^5.0.0"
   },
   "keywords": [
     "gatsby",

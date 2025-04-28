@@ -6,12 +6,10 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Header } from "./header"
+import { ChakraUiProvider } from "../components/ui/chakra-ui-provider"
 import "./layout.scss"
-
-
 
 type LayoutProps = React.PropsWithChildren<{}>
 const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
@@ -27,19 +25,21 @@ const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-        <main style={{
-          height: '100%'
-        }}>{children}</main>
+      <ChakraUiProvider>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main
+          style={{
+            height: "100%",
+          }}
+        >
+          {children}
+        </main>
         <footer>
           <span>Built with 💖 ({new Date().getFullYear()})</span>
         </footer>
+      </ChakraUiProvider>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
