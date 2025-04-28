@@ -1,9 +1,16 @@
+$pip-container-spacing: 20px;
+$pip-container-border-thickness: 1px;
+
 .pip-container {
+    box-sizing: border-box;
     position: relative;
+    padding: $pip-container-spacing;
 }
 
 .pip-container:hover {
-    border: 1px dotted #000;
+    // adjusting the padding keeps the box from jumping around
+    padding: $pip-container-spacing - $pip-container-border-thickness;
+    border: $pip-container-border-thickness dashed;
 }
 
 .pip-button {
@@ -11,6 +18,7 @@
     top: 0;
     right: 0;
     visibility: visible;
+    z-index: 10;
 }
 
 #picture-in-picture .pip-button {
