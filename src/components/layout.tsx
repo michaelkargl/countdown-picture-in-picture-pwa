@@ -9,8 +9,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Header } from "./header"
 import { ChakraUiProvider } from "./ui/chakra-ui-provider"
-import '@fontsource/fusion-pixel-12px-monospaced-jp';
+import "@fontsource/fusion-pixel-12px-monospaced-jp"
 import "./layout.scss"
+import { Box } from "@chakra-ui/react"
 
 type LayoutProps = React.PropsWithChildren<{}>
 const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
@@ -28,13 +29,12 @@ const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
     <>
       <ChakraUiProvider>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main
-          style={{
-            height: "100%",
-          }}
-        >
-          {children}
+        <Box>
+        <main>
+            {children}
         </main>
+        </Box>
+
         <footer>
           <span>Built with 💖 ({new Date().getFullYear()})</span>
         </footer>

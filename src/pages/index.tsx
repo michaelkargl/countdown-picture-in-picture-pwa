@@ -5,6 +5,7 @@ import { TimerEntity } from "../models"
 import { DateTime } from "luxon"
 import Layout from "../components/layout"
 import "./index.css"
+import { ColorModeButton } from "../components/ui/color-mode"
 
 // ~~0. PiP POC~~
 // 1. Get timer (1)
