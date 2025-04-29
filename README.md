@@ -5,6 +5,13 @@ Example [Gatsby] website using GitLab Pages.
 Learn more about GitLab Pages at https://pages.gitlab.io and the official
 documentation https://docs.gitlab.com/ce/user/project/pages/.
 
+## Tags
+
+<!-- Languages, Frameworks, Libraries, Hosting Platforms, CI/CD, IaC, Scripting languages -->
+
+Gatsby, GatsbyJS, DecapCMS, ReactJS, React, JavaScript, HTML, CSS, GitLab, GitLab Pages, GitLab CI/CD,
+Typescript, Luxon, Moment.js, PWA
+
 ## 📜 Table of Contents
 
 - [GitLab CI](#gitlab-ci)
