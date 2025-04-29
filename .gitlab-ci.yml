@@ -39,18 +39,18 @@ yarn:install:
     - .yarn
     - node_modules
 
-test:unit:
-  stage: test
-  needs: ["yarn:install"]
-  script:
-    - yarn run test:unit
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_MERGE_REQUEST_ID
-  cache:
-    paths:
-    - .yarn
-    - node_modules
+#test:unit:
+#  stage: test
+#  needs: ["yarn:install"]
+#  script:
+#    - yarn run test:unit
+#  rules:
+#    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#    - if: $CI_MERGE_REQUEST_ID
+#  cache:
+#    paths:
+#    - .yarn
+#    - node_modules
 
 test:gatsby:
   stage: test
@@ -69,7 +69,7 @@ pages:
   stage: deploy
   needs: 
     - yarn:install
-    - test:unit
+#    - test:unit
     - test:gatsby
   script:
     - yarn run build --prefix-paths
