@@ -1,6 +1,13 @@
 backend:
   # local in-memory repo for testing
-  name: test-repo
+  name: gitlab
+  repo: /ohsnaparts/osasoftworks/countdown-picture-in-picture-pwa
+  branch: master
+  auth_type: pkce
+  app_id: 9be919f4cb7df029867b09f3777580247847118d0d73426e398928c72bdf36bc
+
+# when using the default proxy server port (for local dev)
+local_backend: true
 
 media_folder: static/assets
 public_folder: /assets

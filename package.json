@@ -74,6 +74,6 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "resolutions": {
-    "mini-css-extract-plugin": "^1.0.0"
+    "mini-css-extract-plugin": "1.6.2"
   }
 }
