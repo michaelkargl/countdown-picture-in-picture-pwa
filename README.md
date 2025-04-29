@@ -12,13 +12,6 @@ documentation https://docs.gitlab.com/ce/user/project/pages/.
 Gatsby, GatsbyJS, DecapCMS, ReactJS, React, JavaScript, HTML, CSS, GitLab, GitLab Pages, GitLab CI/CD,
 Typescript, Luxon, Moment.js, PWA
 
-## 📜 Table of Contents
-
-- [GitLab CI](#gitlab-ci)
-- [Building locally](#building-locally)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Quick start](#-quick-start)
-- [Learning gatsby](#-learning-gatsby)
 
 ## 🍎 Requirements
 
@@ -54,6 +47,12 @@ _Have another more specific idea? You may want to check out our vibrant collecti
    # run local dev server
    yarn run start
    ```
+
+1. Open your browser and visit `http://localhost:8000`
+1. To access the admin panel, visit `http://localhost:8000/admin`
+
+> If the URLs wont work, please check configuration for the right port or the URL printed in the console after serving
+> it locally.
 
 ## Spec
 
