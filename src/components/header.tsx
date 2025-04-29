@@ -1,6 +1,5 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React, { ReactElement } from "react"
+import { Link } from 'gatsby';
 import { ColorModeButton } from "./ui/color-mode"
 
 type HeaderProps = {
@@ -9,6 +8,8 @@ type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ siteTitle }): ReactElement => (
   <header>
+    <span>{siteTitle}</span>
     <ColorModeButton />
+    <Link to="/presentations">Presentations</Link>
   </header>
 );

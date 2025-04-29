@@ -36,6 +36,14 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-decap-cms`
+    `gatsby-plugin-decap-cms`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `presentations`,
+        path: `${__dirname}/presentations`,
+      }
+    }
   ],
 }
