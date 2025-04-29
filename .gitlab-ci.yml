@@ -30,7 +30,7 @@ debug:
     echo "Node: $(node --version)" \
       && echo "Yarn: $(yarn --version)" \
       && echo "NPM: $(npm --version)" \
-      env
+      && env
 
 yarn:install:
   stage: build

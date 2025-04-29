@@ -55,8 +55,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "gatsby": "gatsby",
-    "build": "yarn run gatsby build",
+    "ynpx": "npx ynpx --prefer-offline",
+    "yarn": "yarn run --offline",
+    "gatsby": "yarn run ynpx gatsby",
+    "build": "yarn run yarn gatsby build",
     "serve": "yarn run gatsby serve",
     "develop": "yarn run gatsby develop",
     "start": "yarn run gatsby develop",
@@ -70,5 +72,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "resolutions": {
+    "mini-css-extract-plugin": "^1.0.0"
   }
 }
