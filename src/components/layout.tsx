@@ -12,6 +12,11 @@ import { ChakraUiProvider } from "./ui/chakra-ui-provider"
 import "@fontsource/fusion-pixel-12px-monospaced-jp"
 import "./layout.scss"
 import { Box } from "@chakra-ui/react"
+import { TimerDbContext } from "../contexts"
+import { TimerDB } from "../db/TimerDB"
+import { TimerModelVsTimerEntityMapper } from "../mapping/TimerModelVsTimerEntityMapper"
+
+const TIMER_DB = new TimerDB(new TimerModelVsTimerEntityMapper())
 
 type LayoutProps = React.PropsWithChildren<{}>
 const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
@@ -26,20 +31,18 @@ const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
   `)
 
   return (
-    <>
-      <ChakraUiProvider>
+    <ChakraUiProvider>
+      <TimerDbContext.Provider value={{ timerDb: TIMER_DB }}>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Box>
-        <main>
-            {children}
-        </main>
+          <main>{children}</main>
         </Box>
 
         <footer>
           <span>Built with 💖 ({new Date().getFullYear()})</span>
         </footer>
-      </ChakraUiProvider>
-    </>
+      </TimerDbContext.Provider>
+    </ChakraUiProvider>
   )
 }
 

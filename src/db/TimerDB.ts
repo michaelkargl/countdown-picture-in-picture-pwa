@@ -1,9 +1,19 @@
-import { set, entries, get } from "idb-keyval"
+import { entries, get, set } from "idb-keyval"
 import { TimerEntity, TimerModel } from "../models"
 import { ResourceNotFoundException } from "../exceptions"
 import { IMapper } from "../mapping/IMapper"
 
-export class TimerDB {
+export interface ITimerDb {
+  getTimersAsync(): Promise<TimerModel[]>
+
+  setTimerAsync(timer: TimerModel): Promise<void>
+
+  setTimersAsync(timers: TimerModel[]): Promise<void>
+
+  getTimerAsync(id: string): Promise<TimerModel>
+}
+
+export class TimerDB implements ITimerDb {
   constructor(private readonly mapper: IMapper<TimerModel, TimerEntity>) {}
 
   public async getTimersAsync(): Promise<TimerModel[]> {
@@ -18,9 +28,13 @@ export class TimerDB {
     await set(entity.id, entity)
   }
 
+  public async setTimersAsync(timers: TimerModel[]): Promise<void> {
+    await Promise.all(timers.map(t => this.setTimerAsync(t)))
+  }
+
   public async getTimerAsync(id: string): Promise<TimerModel> {
-    const entity = await get<TimerModel>(id);
+    const entity = await get<TimerModel>(id)
     ResourceNotFoundException.ThrowIfNullOrUndefined(entity)
-    return this.mapper.MapBackwards(entity!);
+    return this.mapper.MapBackwards(entity!)
   }
 }

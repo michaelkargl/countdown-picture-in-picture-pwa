@@ -1,11 +1,11 @@
 import * as React from "react"
-import { PropsWithChildren, ReactElement } from "react"
+import { PropsWithChildren } from "react"
 import "./ProgressBar.css"
-import { TimerEntity } from "../../models"
+import { TimerModel } from "../../models"
 import { HStack, Progress } from "@chakra-ui/react"
 
 export type ProgressBarProps = PropsWithChildren<{
-  timer: TimerEntity
+  timer: TimerModel
   percentage: number
   label: string
 }>

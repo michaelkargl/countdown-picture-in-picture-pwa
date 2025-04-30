@@ -1,5 +1,5 @@
 import * as React from "react"
-import { TimerEntity } from "../../models"
+import { TimerModel } from "../../models"
 import { ProgressBar } from "../ProgressBar/ProgressBar"
 import "./timer.css"
 import { DateTime } from "luxon"
@@ -9,8 +9,8 @@ import { pad } from "../../utils"
 import { EditableProgressBar } from "../ProgressBar/EditableProgressBar"
 
 export type TimerProps = {
-  timer: TimerEntity,
-  timerChanged: (timer: Readonly<TimerEntity>) => void
+  timer: TimerModel,
+  timerChanged: (timer: Readonly<TimerModel>) => void
 }
 
 export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
@@ -22,7 +22,7 @@ export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
     const percent = getTimerPercentage(props.timer) * 100
     let label = `${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`
 
-    function timerChanged(timer: Readonly<TimerEntity>): void {
+    function timerChanged(timer: Readonly<TimerModel>): void {
       props.timerChanged({...timer});
     }
 
@@ -61,7 +61,7 @@ function toDateTime(date: Date | number | string): DateTime | undefined {
   return DateTime.fromISO(date.toString())
 }
 
-function getTimerPercentage(timer: TimerEntity, precision = 4): number {
+function getTimerPercentage(timer: TimerModel, precision = 4): number {
   const duration = timer.endTime.diff(timer.startTime)
   const remaining = timer.endTime.diffNow()
   const percentage = remaining.milliseconds / duration.milliseconds

@@ -12,11 +12,11 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react"
 import { TimerEditor } from "../Timer/timer-editor"
-import { TimerEntity } from "../../models"
+import { TimerModel } from "../../models"
 import { DateTime } from "luxon"
 
 type EditableProgressBarProps = ProgressBarProps & {
-  timerChanged: (timer: TimerEntity) => void
+  timerChanged: (timer: TimerModel) => void
 }
 
 export const EditableProgressBar: React.FC<EditableProgressBarProps> = (

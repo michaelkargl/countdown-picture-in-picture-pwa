@@ -1,10 +1,9 @@
 import React, { ReactElement, useEffect, useState } from "react"
 import { Code, Group, Input, InputGroup } from "@chakra-ui/react"
-import { TimerEntity } from "../../models"
-import { DateTime } from "luxon"
+import { TimerModel } from "../../models"
 
 export type TimerEditorProps = {
-  timer: TimerEntity
+  timer: TimerModel
   endDateTimeChange: (endDateTime: string) => void
 }
 
