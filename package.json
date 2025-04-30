@@ -58,17 +58,14 @@
   "scripts": {
     "ynpx": "npx ynpx --prefer-offline",
     "concurrently": "yarn ynpx concurrently --kill-others",
-    "yarn:emoji": "yarn run --emoji=true",
-    "yarn:offline": "yarn run yarn:emoji --offline",
-    "yarn": "yarn run yarn:offline",
-    "gatsby": "yarn run ynpx gatsby",
-    "build": "yarn run yarn gatsby build",
-    "serve": "yarn run gatsby serve",
+    "gatsby": "yarn run --offline ynpx gatsby",
+    "build": "yarn run --offline gatsby build --prefix-paths",
+    "serve": "yarn run --offline gatsby serve --prefix-paths",
     "serve:decap": "yarn run ynpx decap-server",
-    "develop": "yarn run concurrently \"yarn run serve:decap\" \"yarn run gatsby develop\"",
-    "start": "yarn run gatsby develop",
+    "develop": "yarn run --offline concurrently \"yarn run serve:decap\" \"yarn run gatsby develop\"",
+    "start": "yarn run --offline gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "clean": "yarn run gatsby clean",
+    "clean": "yarn run --offline gatsby clean",
     "test:unit": "jest"
   },
   "repository": {

@@ -1,13 +1,13 @@
 const projectPathPrefix =
-  process.env.CI_PROJECT_NAME || "gatsby"
+  process.env.CI_PROJECT_NAME || "countdown-pip-pwa"
 
 module.exports = {
   // Use CI_PROJECT_NAME variable as pathPrefix, edit/comment if you want to use a custom domain.
   pathPrefix: `/${projectPathPrefix}`,
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Countdown Picture in Picture PWA`,
+    description: `A rapid prototype of a countdown PWA with persistent counters and picture in picture support.`,
+    author: `@michaelkargl`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,7 +25,7 @@ module.exports = {
       options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
-        start_url: `/`,
+        start_url: `/${projectPathPrefix}`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
@@ -47,3 +47,9 @@ module.exports = {
     }
   ],
 }
+
+console.log('--------------------------------------------------------');
+console.log('Application path prefix: %s', projectPathPrefix );
+console.log(`Example LOCAL: http://localhost:8000/%s`, projectPathPrefix);
+console.log(`Example DEV: http://localhost:9000/%s`, projectPathPrefix);
+console.log('--------------------------------------------------------');

@@ -24,14 +24,6 @@ cache:
     - .cache/
     - public/
 
-debug:
-  stage: build
-  script: |-
-    echo "Node: $(node --version)" \
-      && echo "Yarn: $(yarn --version)" \
-      && echo "NPM: $(npm --version)" \
-      && env
-
 yarn:install:
   stage: build
   script: |-3
@@ -47,24 +39,19 @@ yarn:install:
     - .yarn
     - node_modules
 
-#test:unit:
-#  stage: test
-#  needs: ["yarn:install"]
-#  script:
-#    - yarn run test:unit
-#  rules:
-#    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-#    - if: $CI_MERGE_REQUEST_ID
-#  cache:
-#    paths:
-#    - .yarn
-#    - node_modules
-
 test:gatsby:
   stage: test
   needs: ["yarn:install"]
-  script:
-    - yarn run gatsby info
+  script: |-
+    echo "---------------------------------------------------------------------"
+    echo "Node: $(node --version)"
+    echo "Yarn: $(yarn --version)"
+    echo "NPM: $(npm --version)"
+    echo "---------------------------------------------------------------------"
+    env
+    echo "---------------------------------------------------------------------"
+    yarn run gatsby info
+    echo "---------------------------------------------------------------------"
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - if: $CI_MERGE_REQUEST_ID
@@ -77,10 +64,9 @@ pages:
   stage: deploy
   needs: 
     - yarn:install
-#    - test:unit
     - test:gatsby
   script:
-    - yarn run build --prefix-paths
+    - yarn run build
   cache:
     paths:
     - .yarn
