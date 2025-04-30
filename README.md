@@ -58,6 +58,8 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
 # Deploy
 
+At the moment, deployment is done manually to the `gh-pages` branch:
+
 ```pwsh
 yarn run deploy
 ```

@@ -11,15 +11,16 @@ Param(
 Set-StrictMode -Version 3
 Import-Module (Join-Path -Resolve $ProjectRoot 'scripts/GithubUtil.psm1') -Force
 
-
 Write-Host '1️⃣ PRE-DEPLOY'
 # necessary for gh-pages cmd to work
 Clear-GithubPagesCache -ProjectRoot $ProjectRoot
 
-
-if (-not $NoBuild) {
+$BuildPath = Join-Path $ProjectRoot $BuildDirName
+$BuildExists = Test-Path $BuildPath
+if (-not $NoBuild -or -not $BuildExists) {
     Write-Host '2️⃣ BUILD'
     Write-Host '🏗️ Building the project...'
+    Remove-Item -Recurse -Force $BuildPath -Verbose -ErrorAction SilentlyContinue
     yarn run build
 }
 

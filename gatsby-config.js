@@ -1,5 +1,4 @@
-const projectPathPrefix =
-  process.env.CI_PROJECT_NAME || "countdown-pip-pwa"
+const projectPathPrefix = "countdown-picture-in-picture-pwa"
 
 module.exports = {
   // Use CI_PROJECT_NAME variable as pathPrefix, edit/comment if you want to use a custom domain.
