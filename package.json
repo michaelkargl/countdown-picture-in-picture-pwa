@@ -68,9 +68,8 @@
     "start": "yarn run --offline gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "clean": "yarn run --offline gatsby clean",
-    "predeploy": "rm -Rf node_modules/.cache/gh-pages",
-    "deploy:only": "yarn run predeploy && yarn run gh-pages --dist public --branch gh-pages --dest . --no-history",
-    "deploy": "yarn run gatsby build && yarn run deploy:only",
+    "deploy": "pwsh ./scripts/deploy.ps1",
+    "deploy:only": "yarn run deploy -NoBuild",
     "test:unit": "jest"
   },
   "repository": {

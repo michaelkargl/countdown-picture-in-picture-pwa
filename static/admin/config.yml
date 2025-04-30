@@ -15,7 +15,7 @@
 #   name: local-test
 
 # https://decapcms.org/docs/github-backend/
- backend:
+backend:
    name: github
    repo: michaelkargl/countdown-picture-in-picture-pwa
    branch: master

@@ -15,6 +15,7 @@ Typescript, Luxon, Moment.js, PWA
 
 ## 🍎 Requirements
 
+- Install _[Powershell][pwsh-installation]_
 - Install node
   1. Install _[nvm]_ (linux) or `nvm-windows`
 
@@ -31,6 +32,7 @@ Typescript, Luxon, Moment.js, PWA
      yarn
      ```
 
+[pwsh-installation]: https://learn.microsoft.com/de-de/powershell/scripting/install/installing-powershell?view=powershell-7.5
 [nvm]: https://github.com/nvm-sh/nvm
 [nvm-windows]: https://github.com/coreybutler/nvm-windows
 
@@ -53,6 +55,12 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
 > If the URLs wont work, please check configuration for the right port or the URL printed in the console after serving
 > it locally.
+
+# Deploy
+
+```pwsh
+yarn run deploy
+```
 
 ## Spec
 
