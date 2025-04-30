@@ -1,6 +1,6 @@
 import { DateTime } from "luxon"
 
-export interface TimerEntity {
+export interface TimerModel {
   id: string
   name: string
   refreshIntervalInMs: number
