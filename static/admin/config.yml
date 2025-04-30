@@ -1,39 +1,25 @@
 # Local git repository
 # https://decapcms.org/docs/working-with-a-local-git-repository/
-backend:
-   name: git-gateway
-
-local_backend:
-  # when using a custom proxy server port
-  url: http://localhost:8082/api/v1
-  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
-  allowed_hosts: ['192.168.0.1']
-
+#backend:
+#   name: git-gateway
+#
+#local_backend:
+#  # when using a custom proxy server port
+#  url: http://localhost:8082/api/v1
+#  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+#  allowed_hosts: ['192.168.0.1']
 
 # https://decapcms.org/docs/test-backend/
+# In-memory test server for local development only
 # backend:
 #   name: local-test
 
-
 # https://decapcms.org/docs/github-backend/
-# backend:
-#   name: github
-#   repo: michaelkargl/countdown-pip-pwa-cms-content
-#   branch: master
-#   auth_type: pkce
-
-
-# https://decapcms.org/docs/gitlab-backend/
-# backend:
-#  name: gitlab
-#  app_id: 9be919f4cb7df029867b09f3777580247847118d0d73426e398928c72bdf36bc
-#  api_root: https://gitlab.com/api/v4
-#  base_url: https://gitlab.com/
-#  auth_endpoint: oauth/authorize
-#  accept_roles:
-#    - admin
-#    - editor
-#    - reporter
+ backend:
+   name: github
+   repo: michaelkargl/countdown-picture-in-picture-pwa
+   branch: master
+   auth_type: pkce
 
 media_folder: static/assets
 public_folder: /assets

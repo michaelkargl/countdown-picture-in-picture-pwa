@@ -42,6 +42,7 @@
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^3.0.0",
     "eslint": "^5.0.0",
+    "gh-pages": "^6.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.1",
     "prettier": "3.5.3",
@@ -59,6 +60,7 @@
     "ynpx": "npx ynpx --prefer-offline",
     "concurrently": "yarn ynpx concurrently --kill-others",
     "gatsby": "yarn run --offline ynpx gatsby",
+    "gh-pages": "npx ynpx --prefer-offline gh-pages",
     "build": "yarn run --offline gatsby build --prefix-paths",
     "serve": "yarn run --offline gatsby serve --prefix-paths",
     "serve:decap": "yarn run ynpx decap-server",
@@ -66,6 +68,9 @@
     "start": "yarn run --offline gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "clean": "yarn run --offline gatsby clean",
+    "predeploy": "rm -Rf node_modules/.cache/gh-pages",
+    "deploy:only": "yarn run predeploy && yarn run gh-pages --dist public --branch gh-pages --dest . --no-history",
+    "deploy": "yarn run gatsby build && yarn run deploy:only",
     "test:unit": "jest"
   },
   "repository": {
