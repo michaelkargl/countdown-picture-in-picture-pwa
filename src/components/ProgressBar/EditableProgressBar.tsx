@@ -20,9 +20,8 @@ type EditableProgressBarProps = ProgressBarProps & {
 }
 
 export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
-  props: EditableProgressBarProps
+  props: EditableProgressBarProps,
 ): ReactElement => {
-
   function endTimeChanged(endDateTime: string) {
     const newTimer = { ...props.timer, endTime: DateTime.fromISO(endDateTime) }
     props.timerChanged(newTimer)
@@ -31,26 +30,25 @@ export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
   return (
     <div className="editable-progress-bar">
       <Card.Root variant="elevated">
-        <Card.Header>
-          {props.timer.name}
-        </Card.Header>
+        <Card.Header>{props.timer.name}</Card.Header>
         <Card.Body>
           <Collapsible.Root>
-          <Flex gap={2} grow={1}>
-            <div style={{ width: "100%" }}>
-              <ProgressBar {...props} />
-            </div>
-            <div>
-              <Collapsible.Trigger>
-              <Button size="xs" variant="outline">
-                ✏️
-              </Button>
-              </Collapsible.Trigger>
-            </div>
-          </Flex>
+            <Flex gap={2} grow={1}>
+              <div style={{ width: "100%" }}>
+                <ProgressBar {...props} />
+              </div>
+              <div>
+                <Collapsible.Trigger size="xs" variant="outline">
+                  🔽
+                </Collapsible.Trigger>
+              </div>
+            </Flex>
             <Collapsible.Content>
               <Box padding="4">
-                <TimerEditor timer={props.timer} endDateTimeChange={endTimeChanged}/>
+                <TimerEditor
+                  timer={props.timer}
+                  endDateTimeChange={endTimeChanged}
+                />
               </Box>
             </Collapsible.Content>
           </Collapsible.Root>

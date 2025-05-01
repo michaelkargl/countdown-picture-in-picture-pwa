@@ -18,7 +18,7 @@ export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
   const renderer: CountdownRendererFn = (
     rendererProps: CountdownRenderProps
   ) => {
-    const { hours, minutes, seconds } = rendererProps
+      const { hours, minutes, seconds } = rendererProps
     const percent = getTimerPercentage(props.timer) * 100
     let label = `${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`
 

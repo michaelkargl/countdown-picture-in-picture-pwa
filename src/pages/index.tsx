@@ -68,13 +68,17 @@ const IndexPage = () => {
   const { timerDb } = useContext(TimerDbContext)
   const [timers, setTimers] = useState<readonly TimerModel[]>([])
 
-  useEffect(async () => {
-    await timerDb.setTimersAsync(TIMERS)
-    const storedTimers = await timerDb.getTimersAsync()
+  useEffect(() => {
+    const loadTimersAsync = async () => {
 
-    // TODO kami: DateTimes are getting lost across serialization barriers
-    // setTimers(storedTimers)
-    setTimers(TIMERS)
+      const storedTimers = await timerDb.getTimersAsync()
+      setTimers(storedTimers)
+    }
+
+    loadTimersAsync().then(r => {
+      console.log('Loaded timers for %o', r)
+    });
+
   }, [])
 
   function timerChanged(timer: Readonly<TimerModel>): void {

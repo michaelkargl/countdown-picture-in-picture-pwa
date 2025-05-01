@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: adds resentation page displaying CMS content&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: adds crude persistence (wip)">
+      <change afterPath="$PROJECT_DIR$/src/models/IsoDateString.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timer/timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mapping/TimerModelVsTimerEntityMapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping/TimerModelVsTimerEntityMapper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/TimerEntity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/TimerEntity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +38,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/idb-keyval/dist/index.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/idb/build/entry.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -41,25 +53,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "G:/BACKUPS/Workspace/react-space/countdown-picture-in-picture-pwa",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
-    "ts.external.directory.path": "C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/adds-rxdb-storage&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/BACKUPS/Workspace/react-space/countdown-picture-in-picture-pwa&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Workspace\countdown-picture-in-picture-pwa\scripts" />
@@ -89,6 +101,8 @@
       <workItem from="1745977824866" duration="5397000" />
       <workItem from="1745987952607" duration="1857000" />
       <workItem from="1745995515120" duration="4785000" />
+      <workItem from="1746004054658" duration="23984000" />
+      <workItem from="1746064883429" duration="689000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upgrades used typescript version so that we can use generators">
       <option name="closed" value="true" />
@@ -250,7 +264,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745942412048</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="temp: checkpoint commit">
+      <option name="closed" value="true" />
+      <created>1746015641773</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1746015641773</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: adds mapper &#10;feat: adds keyval-idb&#10;feat: adds TimerDB">
+      <option name="closed" value="true" />
+      <created>1746030942456</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1746030942456</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: adds crude persistence (wip)">
+      <option name="closed" value="true" />
+      <created>1746039677109</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1746039677109</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,17 +333,9 @@
     <MESSAGE value="feat: adds debug stage with version output" />
     <MESSAGE value="feat: adds gitlab auth" />
     <MESSAGE value="feat: adds deployment script" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adds deployment script" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx</url>
-          <line>60</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="temp: checkpoint commit" />
+    <MESSAGE value="feat: adds mapper &#10;feat: adds keyval-idb&#10;feat: adds TimerDB" />
+    <MESSAGE value="feat: adds crude persistence (wip)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adds crude persistence (wip)" />
   </component>
 </project>

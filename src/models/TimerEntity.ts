@@ -1,10 +1,10 @@
-import { DateTime } from "luxon"
+import { IsoDateString } from "./IsoDateString"
 
 export interface TimerEntity {
   id: string
   name: string
   refreshIntervalInMs: number
-  startTime: DateTime
-  endTime: DateTime
+  startTime: IsoDateString
+  endTime: IsoDateString
   color: string
 }
