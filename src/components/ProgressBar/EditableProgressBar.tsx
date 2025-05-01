@@ -25,7 +25,7 @@ export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
   }
 
   return (
-    <div className="editable-progress-bar">
+    <Box className="editable-progress-bar-component">
       <Card.Root variant="elevated">
         <Card.Header>{props.timer.name}</Card.Header>
         <Card.Body>
@@ -51,6 +51,6 @@ export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
           </Collapsible.Root>
         </Card.Body>
       </Card.Root>
-    </div>
+    </Box>
   )
 }

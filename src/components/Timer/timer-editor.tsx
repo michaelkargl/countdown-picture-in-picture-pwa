@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from "react"
-import { Code, Group, Input, InputGroup } from "@chakra-ui/react"
+import { Box, Code, Group, Input, InputGroup } from "@chakra-ui/react"
 import { TimerModel } from "../../models"
 
 export type TimerEditorProps = {
@@ -10,7 +10,7 @@ export type TimerEditorProps = {
 export const TimerEditor: React.FC<TimerEditorProps> = (
   props: TimerEditorProps
 ): ReactElement => (
-  <div className="timer-editor">
+  <Box className="timer-editor">
     <InputGroup zIndex={{ _focusWithin: "1" }}>
       <Group w="full" attached>
         <label htmlFor="target-date-time-input">Target:&nbsp;</label>
@@ -25,5 +25,5 @@ export const TimerEditor: React.FC<TimerEditorProps> = (
         />
       </Group>
     </InputGroup>
-  </div>
+  </Box>
 )

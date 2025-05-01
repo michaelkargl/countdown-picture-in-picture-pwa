@@ -7,33 +7,40 @@ import { CountdownRendererFn } from "react-countdown/dist/Countdown"
 import { pad } from "../../utils"
 import { EditableProgressBar } from "../ProgressBar/EditableProgressBar"
 import "./timer.css"
-
+import { Box } from "@chakra-ui/react"
 
 export type TimerProps = {
-  timer: TimerModel,
+  timer: TimerModel
   timerChanged: (timer: Readonly<TimerModel>) => void
 }
 
 export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
-
   const renderer: CountdownRendererFn = (
-    rendererProps: CountdownRenderProps
+    rendererProps: CountdownRenderProps,
   ) => {
-      const { hours, minutes, seconds } = rendererProps
+    const { hours, minutes, seconds } = rendererProps
     const percent = getTimerPercentage(props.timer) * 100
     let label = `${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`
 
     function timerChanged(timer: Readonly<TimerModel>): void {
-      props.timerChanged({...timer});
+      props.timerChanged({ ...timer })
     }
 
     return (
-      <EditableProgressBar percentage={percent} label={label} timer={props.timer} timerChanged={timerChanged}>
-        <ProgressBar
-          percentage={0}
-          label='Timer finished 🎇'
-          timer={props.timer}/>
-      </EditableProgressBar>
+      <Box className="timer-component">
+        <EditableProgressBar
+          percentage={percent}
+          label={label}
+          timer={props.timer}
+          timerChanged={timerChanged}
+        >
+          <ProgressBar
+            percentage={0}
+            label="Timer finished 🎇"
+            timer={props.timer}
+          />
+        </EditableProgressBar>
+      </Box>
     )
   }
 

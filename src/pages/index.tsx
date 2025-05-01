@@ -12,6 +12,7 @@ import {
 import { TimerDbContext } from "../contexts"
 
 import "./index.css"
+import { Box } from "@chakra-ui/react"
 
 const IndexPage = () => {
   const { timerStore } = useContext(TimerDbContext)
@@ -33,7 +34,7 @@ const IndexPage = () => {
   }
 
   return (
-    <div className="index">
+    <Box className="index">
       <PictureInPictureContainer id="test">
         {timers.map((timer, index) => (
           <Timer
@@ -43,7 +44,7 @@ const IndexPage = () => {
           />
         ))}
       </PictureInPictureContainer>
-    </div>
+    </Box>
   )
 }
 

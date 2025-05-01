@@ -10,25 +10,27 @@ type PictureInPictureContainerProps = PropsWithChildren<{
   id: string
 }>
 
-export const PictureInPictureContainer: React.FC<PictureInPictureContainerProps> = (
-  props: PictureInPictureContainerProps
-): React.ReactElement => {
+export const PictureInPictureContainer: React.FC<
+  PictureInPictureContainerProps
+> = (props: PictureInPictureContainerProps): React.ReactElement => {
   // no need to re-calculate evertime -> memoize
   const pipContainerId = useMemo(() => getPipContainerId(props.id), [props.id])
   const pipButtonId = useMemo(() => getPipButtonId(props.id), [props.id])
   const pipDocumentId = useMemo(() => getPipDocumentClass(props.id), [props.id])
 
   return (
-    <Box className="pip-container" id={pipContainerId}>
-      <Box className={pipDocumentId}>
-        <Button
-          className="pip-button pip-hidden"
-          id={pipButtonId}
-          onClick={() => showPictureInPictureAsync(props.id)}
-        >
-          🖥️
-        </Button>
-        {props.children}
+    <Box className="picture-in-picture-container-component">
+      <Box className="pip-container" id={pipContainerId}>
+        <Box className={pipDocumentId}>
+          <Button
+            className="pip-button pip-hidden"
+            id={pipButtonId}
+            onClick={() => showPictureInPictureAsync(props.id)}
+          >
+            🖥️
+          </Button>
+          {props.children}
+        </Box>
       </Box>
     </Box>
   )
@@ -46,7 +48,7 @@ function getPipDocumentClass(id: string): string {
 
 function findPipDocuments(
   pipId: string,
-  searchRoot = document.documentElement
+  searchRoot = document.documentElement,
 ): Element[] {
   const pipDocumentClass = getPipDocumentClass(pipId)
   const pipDocuments = searchRoot.querySelectorAll(`.${pipDocumentClass}`)
@@ -60,11 +62,11 @@ function getPipButtonId(id: string): string {
 
 function getPipButton(
   pipId: string,
-  searchRoot: HTMLElement = document.documentElement
+  searchRoot: HTMLElement = document.documentElement,
 ): HTMLButtonElement {
   const buttonId = getPipButtonId(pipId)
   const pipButton: HTMLButtonElement | null = searchRoot.querySelector(
-    `#${buttonId}`
+    `#${buttonId}`,
   )
 
   ResourceNotFoundException.ThrowIfNullOrUndefined(pipButton, "pipButton")
@@ -126,7 +128,7 @@ async function showPictureInPictureAsync(pipId: string): Promise<void> {
 }
 
 function supportsPictureInPicture(win: object): win is WindowExtended {
-  const extWindow = (win as any) as WindowExtended
+  const extWindow = win as any as WindowExtended
   return !!extWindow && !!extWindow.documentPictureInPicture
 }
 
