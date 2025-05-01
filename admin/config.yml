@@ -1,0 +1,36 @@
+# Local git repository
+# https://decapcms.org/docs/working-with-a-local-git-repository/
+#backend:
+#   name: git-gatewpay
+##
+##local_backend:
+##  # when using a custom proxy server port
+##  url: http://localhost:8082/ai/v1
+#  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+#  allowed_hosts: ['192.168.0.1']
+
+# https://decapcms.org/docs/test-backend/
+# In-memory test server for local development only
+# backend:
+#   name: local-test
+
+# https://decapcms.org/docs/github-backend/
+backend:
+   name: github
+   repo: michaelkargl/countdown-picture-in-picture-pwa
+   branch: master
+   auth_type: pkce
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: presentations
+    label: Presentations
+    label_singular: Presentation
+    folder: presentations
+    create: true
+    fields:
+      - { name: date, label: Date, widget: datetime }
+      - { name: conferenceName, label: Conference Name }
+      - { name: description, label: Description }
