@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="fix: console and persistence errors">
+    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors&#10;chore: remove unused idb dependency">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timer/timer-editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer-editor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timer/timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/TimerDbContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/TimerDbContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/TimerDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/TimerDB.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +102,7 @@
       <workItem from="1745987952607" duration="1857000" />
       <workItem from="1745995515120" duration="4785000" />
       <workItem from="1746004054658" duration="23984000" />
-      <workItem from="1746064883429" duration="5428000" />
+      <workItem from="1746064883429" duration="10044000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upgrades used typescript version so that we can use generators">
       <option name="closed" value="true" />
@@ -294,7 +296,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746065810674</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors">
+      <option name="closed" value="true" />
+      <created>1746081342651</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1746081342651</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors&#10;chore: remove unused idb dependency">
+      <option name="closed" value="true" />
+      <created>1746081375168</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1746081375168</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors&#10;chore: remove unused idb dependency">
+      <option name="closed" value="true" />
+      <created>1746081380870</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1746081380870</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,6 +379,9 @@
     <MESSAGE value="feat: adds mapper &#10;feat: adds keyval-idb&#10;feat: adds TimerDB" />
     <MESSAGE value="feat: adds crude persistence (wip)" />
     <MESSAGE value="fix: console and persistence errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: console and persistence errors" />
+    <MESSAGE value="chore: remove unused idb dependency" />
+    <MESSAGE value="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors" />
+    <MESSAGE value="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors&#10;chore: remove unused idb dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors&#10;chore: remove unused idb dependency" />
   </component>
 </project>

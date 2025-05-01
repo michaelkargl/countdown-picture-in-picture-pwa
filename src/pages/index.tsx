@@ -14,23 +14,22 @@ import { TimerDbContext } from "../contexts"
 import "./index.css"
 
 const IndexPage = () => {
-  const { timerDb } = useContext(TimerDbContext)
-  const [timers, setTimers] = useState<readonly TimerModel[]>([])
+  const { timerStore } = useContext(TimerDbContext)
+  const [timers, setLocalTimers] = useState<readonly TimerModel[]>([])
 
   useEffect(() => {
-    const loadTimersAsync = async () => {
-      const storedTimers = await timerDb.getTimersAsync()
-      setTimers(storedTimers)
-    }
-
-    loadTimersAsync().then(r => {
-      console.log("Loaded timers for %o", r)
-    })
+    loadTimersAsync().then(r => console.log("Loaded timers %o", r))
   }, [])
 
-  function timerChanged(timer: Readonly<TimerModel>): void {
-    console.log("Timer changed", timer)
-    setTimers(timers.map(t => (t.id === timer.id ? timer : t)))
+  async function loadTimersAsync(): Promise<void> {
+    const storedTimers = await timerStore.getTimersAsync()
+    setLocalTimers(storedTimers)
+  }
+
+  async function timerChanged(timer: Readonly<TimerModel>): Promise<void> {
+    console.log("Timer changed", timer);
+    await timerStore.setTimerAsync(timer);
+    await loadTimersAsync();
   }
 
   return (

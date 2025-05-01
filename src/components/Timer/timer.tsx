@@ -1,12 +1,13 @@
 import * as React from "react"
 import { TimerModel } from "../../models"
 import { ProgressBar } from "../ProgressBar/ProgressBar"
-import "./timer.css"
 import { DateTime } from "luxon"
 import Countdown, { CountdownRenderProps } from "react-countdown"
 import { CountdownRendererFn } from "react-countdown/dist/Countdown"
 import { pad } from "../../utils"
 import { EditableProgressBar } from "../ProgressBar/EditableProgressBar"
+import "./timer.css"
+
 
 export type TimerProps = {
   timer: TimerModel,

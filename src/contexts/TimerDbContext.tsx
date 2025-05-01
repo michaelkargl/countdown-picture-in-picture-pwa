@@ -3,11 +3,11 @@ import { ITimerDb, TimerDB } from "../db/TimerDB"
 import { TimerModelVsTimerEntityMapper } from "../mapping/TimerModelVsTimerEntityMapper"
 
 export interface TimerDbContextProps {
-  timerDb: ITimerDb
+  timerStore: ITimerDb
 }
 
 export const TimerDbContext = createContext<TimerDbContextProps>({
-  timerDb: new TimerDB(new TimerModelVsTimerEntityMapper())
+  timerStore: new TimerDB(new TimerModelVsTimerEntityMapper())
 });
 
 

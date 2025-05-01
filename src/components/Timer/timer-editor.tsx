@@ -11,8 +11,6 @@ export const TimerEditor: React.FC<TimerEditorProps> = (
   props: TimerEditorProps
 ): ReactElement => (
   <div className="timer-editor">
-    <Code>{JSON.stringify(props, null, 2)}</Code>
-
     <InputGroup zIndex={{ _focusWithin: "1" }}>
       <Group w="full" attached>
         <label htmlFor="target-date-time-input">Target:&nbsp;</label>

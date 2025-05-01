@@ -33,7 +33,7 @@ export class TimerDB implements ITimerDb {
   }
 
   public async getTimerAsync(id: string): Promise<TimerModel> {
-    const entity = await get<TimerModel>(id)
+    const entity = await get<TimerEntity>(id)
     ResourceNotFoundException.ThrowIfNullOrUndefined(entity)
     return this.mapper.MapBackwards(entity!)
   }

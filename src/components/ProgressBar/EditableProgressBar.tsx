@@ -1,16 +1,7 @@
 import * as React from "react"
 import { ReactElement } from "react"
 import { ProgressBar, ProgressBarProps } from "./ProgressBar"
-import {
-  Box,
-  Button,
-  Card,
-  Collapsible,
-  Flex,
-  GridItem,
-  InputGroup,
-  SimpleGrid,
-} from "@chakra-ui/react"
+import { Box, Card, Collapsible, Flex } from "@chakra-ui/react"
 import { TimerEditor } from "../Timer/timer-editor"
 import { TimerModel } from "../../models"
 import { DateTime } from "luxon"
@@ -23,8 +14,14 @@ export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
   props: EditableProgressBarProps,
 ): ReactElement => {
   function endTimeChanged(endDateTime: string) {
-    const newTimer = { ...props.timer, endTime: DateTime.fromISO(endDateTime) }
-    props.timerChanged(newTimer)
+    // you always want to know the time from now to then + it will make the bar long again
+    const startTime = DateTime.now();
+    const endTime = DateTime.fromISO(endDateTime);
+    props.timerChanged({
+      ...props.timer,
+      startTime,
+      endTime,
+    });
   }
 
   return (

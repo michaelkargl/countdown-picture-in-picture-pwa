@@ -32,7 +32,7 @@ const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
 
   return (
     <ChakraUiProvider>
-      <TimerDbContext.Provider value={{ timerDb: TIMER_DB }}>
+      <TimerDbContext.Provider value={{ timerStore: TIMER_DB }}>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Box>
           <main>{children}</main>
