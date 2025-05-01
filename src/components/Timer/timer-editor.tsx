@@ -21,11 +21,20 @@ export const TimerEditor: React.FC<TimerEditorProps> = (
     })
   }
 
+  function updateName(name: string): void {
+    setTimer({
+      ...timer,
+      name: name
+    })
+  }
+
   return (
     <Box className="timer-editor">
+      <InputGroup>
+        <Input placeholder='Name' value={timer?.name} onChange={e => updateName(e.currentTarget.value)}/>
+      </InputGroup>
       <InputGroup zIndex={{ _focusWithin: "1" }}>
         <Group w="full" attached>
-          <label htmlFor="target-date-time-input">Target:&nbsp;</label>
           <Input
             id="target-date-time-input"
             roundedTopRight="1"

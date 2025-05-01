@@ -14,7 +14,6 @@ import { TimerDbContext } from "../contexts"
 import "./index.css"
 import { Box, Button, Color } from "@chakra-ui/react"
 import { DateTime } from "luxon"
-import { RandomUtils } from "../utils/random-utils"
 import { ChakraUiUtils } from "../utils/chakra-ui-utils"
 
 const IndexPage = () => {
@@ -33,7 +32,8 @@ const IndexPage = () => {
   async function timerChangedAsync(timer: Readonly<TimerModel>): Promise<void> {
     console.log("Timer changed", timer)
     await timerStore.setTimerAsync(timer)
-    await loadTimersAsync()
+    // workaround to automatically start all the timers automatically (some are stuck)
+    pageReload();
   }
 
   function pageReload() {
@@ -51,8 +51,6 @@ const IndexPage = () => {
     }
     console.log("Adding new timer", timer)
     await timerChangedAsync(timer)
-    // workaround to automatically start all the timers automatically (some are stuck)
-    pageReload();
   }
 
   async function deleteTimerAsync(timer: TimerModel): Promise<void> {

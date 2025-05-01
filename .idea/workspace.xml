@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="chore: adds a box to each component for easier debugging">
-      <change afterPath="$PROJECT_DIR$/src/utils/chakra-ui-utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/random-utils.ts" afterDir="false" />
+    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Timer/timer-editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer-editor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Timer/timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/TimerDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/TimerDB.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +97,7 @@
       <workItem from="1745987952607" duration="1857000" />
       <workItem from="1745995515120" duration="4785000" />
       <workItem from="1746004054658" duration="23984000" />
-      <workItem from="1746064883429" duration="16412000" />
+      <workItem from="1746064883429" duration="17154000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upgrades used typescript version so that we can use generators">
       <option name="closed" value="true" />
@@ -335,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746088527515</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color">
+      <option name="closed" value="true" />
+      <created>1746093216904</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1746093216904</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +403,7 @@
     <MESSAGE value="feat: simplifies code&#10;feat: adds responsivity to enable mobile form factors&#10;chore: remove unused idb dependency" />
     <MESSAGE value="feat: persists changes in timer values to idb" />
     <MESSAGE value="chore: adds a box to each component for easier debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: adds a box to each component for easier debugging" />
+    <MESSAGE value="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color" />
   </component>
 </project>

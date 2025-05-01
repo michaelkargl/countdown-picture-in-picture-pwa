@@ -46,7 +46,6 @@ export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
               <Box padding="4">
                 <TimerEditor
                   timer={props.timer}
-                  endDateTimeChange={endTimeChanged}
                   deleteTimerClicked={props.deleteTimerClicked}
                   saveTimerClicked={props.saveTimerClicked}
                 />
