@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: adds crude persistence (wip)">
-      <change afterPath="$PROJECT_DIR$/src/models/IsoDateString.ts" afterDir="false" />
+    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="fix: console and persistence errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Timer/timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapping/TimerModelVsTimerEntityMapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping/TimerModelVsTimerEntityMapper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/TimerEntity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/TimerEntity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PictureInPictureContainer/PictureInPictureContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +100,7 @@
       <workItem from="1745987952607" duration="1857000" />
       <workItem from="1745995515120" duration="4785000" />
       <workItem from="1746004054658" duration="23984000" />
-      <workItem from="1746064883429" duration="689000" />
+      <workItem from="1746064883429" duration="5428000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upgrades used typescript version so that we can use generators">
       <option name="closed" value="true" />
@@ -288,13 +286,26 @@
       <option name="project" value="LOCAL" />
       <updated>1746039677109</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix: console and persistence errors">
+      <option name="closed" value="true" />
+      <created>1746065810674</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1746065810674</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="da0a0851-2ee1-4e2c-a6e1-00aa7b91dd6c" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -312,6 +323,11 @@
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+        <entry key="da0a0851-2ee1-4e2c-a6e1-00aa7b91dd6c">
+          <value>
+            <State />
           </value>
         </entry>
       </map>
@@ -336,6 +352,7 @@
     <MESSAGE value="temp: checkpoint commit" />
     <MESSAGE value="feat: adds mapper &#10;feat: adds keyval-idb&#10;feat: adds TimerDB" />
     <MESSAGE value="feat: adds crude persistence (wip)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adds crude persistence (wip)" />
+    <MESSAGE value="fix: console and persistence errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: console and persistence errors" />
   </component>
 </project>

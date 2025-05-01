@@ -1,26 +1,38 @@
+@import 'include-media/dist/include-media';
+
 $pip-container-spacing: 20px;
 $pip-container-border-thickness: 1px;
 
 .pip-container {
-    box-sizing: border-box;
-    position: relative;
-    padding: $pip-container-spacing;
+  box-sizing: border-box;
+  position: relative;
+  padding: $pip-container-spacing;
 }
 
 .pip-container:hover {
-    // adjusting the padding keeps the box from jumping around
-    padding: $pip-container-spacing - $pip-container-border-thickness;
-    border: $pip-container-border-thickness dashed;
+  // adjusting the padding keeps the box from jumping around
+  padding: $pip-container-spacing - $pip-container-border-thickness;
+  border: $pip-container-border-thickness dashed;
 }
 
 .pip-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    visibility: visible;
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: visible;
+  z-index: 10;
 }
 
 #picture-in-picture .pip-hidden {
-    visibility: hidden;
+  visibility: hidden;
+}
+
+
+// https://eduardoboucas.github.io/include-media/#features
+@include media("<tablet") {
+  // remove border to fit screen and disable hover border
+  .pip-container, .pip-container:hover {
+    padding: 0;
+    border: none;
+  }
 }

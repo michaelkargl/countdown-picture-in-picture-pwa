@@ -3,6 +3,7 @@ import { PropsWithChildren, useMemo } from "react"
 import { WindowExtended } from "../../models/WindowExtended"
 import { Exception, ResourceNotFoundException } from "../../exceptions"
 import "./PictureInPictureContainer.scss"
+import { Box, Button } from "@chakra-ui/react"
 
 type PictureInPictureClosedCallback = () => void
 type PictureInPictureContainerProps = PropsWithChildren<{
@@ -18,18 +19,18 @@ export const PictureInPictureContainer: React.FC<PictureInPictureContainerProps>
   const pipDocumentId = useMemo(() => getPipDocumentClass(props.id), [props.id])
 
   return (
-    <div className="pip-container" id={pipContainerId}>
-      <div className={pipDocumentId}>
-        <button
+    <Box className="pip-container" id={pipContainerId}>
+      <Box className={pipDocumentId}>
+        <Button
           className="pip-button pip-hidden"
           id={pipButtonId}
           onClick={() => showPictureInPictureAsync(props.id)}
         >
           🖥️
-        </button>
+        </Button>
         {props.children}
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 
