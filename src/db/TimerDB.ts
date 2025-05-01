@@ -25,6 +25,7 @@ export class TimerDB implements ITimerDb {
   public async getTimersAsync(): Promise<TimerModel[]> {
     const entityTuples = await entries<IDBValidKey, TimerEntity>()
     return entityTuples
+      .filter(tuple => NumberUtils.isNumber(tuple[0].toString()))
       .map(tuple => tuple[1])
       .map(entity => this.mapper.MapBackwards(entity))
   }

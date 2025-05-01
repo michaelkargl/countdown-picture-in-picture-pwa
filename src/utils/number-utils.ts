@@ -20,8 +20,11 @@ export class NumberUtils {
     return numberString;
   }
 
-  public static isNumber(str: string): str is number {
-    if (typeof str != 'string') {
+  public static isNumber(str: unknown): str is number {
+    if(typeof str === 'number') {
+      return true;
+    }
+    if (typeof str !== 'string') {
       return false;
     }
     return !isNaN(str) && !isNaN(parseFloat(str));
