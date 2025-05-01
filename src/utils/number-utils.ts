@@ -27,6 +27,6 @@ export class NumberUtils {
     if (typeof str !== 'string') {
       return false;
     }
-    return !isNaN(str) && !isNaN(parseFloat(str));
+    return !isNaN(parseInt(str)) || !isNaN(parseFloat(str));
   }
 }

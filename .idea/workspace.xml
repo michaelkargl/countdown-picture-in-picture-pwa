@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color">
+    <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: ignores entries that were not created by this application">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/TimerDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/TimerDB.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/number-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/number-utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -338,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746093216904</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: ignores entries that were not created by this application">
+      <option name="closed" value="true" />
+      <created>1746099124534</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1746099124534</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +386,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: upgrades used typescript version so that we can use generators" />
     <MESSAGE value="feat: copies styling when opening pip" />
     <MESSAGE value="feat: refactors to use luxon" />
     <MESSAGE value="chore: gatsby upgrade from v2 -&gt; v3" />
@@ -403,6 +410,7 @@
     <MESSAGE value="feat: persists changes in timer values to idb" />
     <MESSAGE value="chore: adds a box to each component for easier debugging" />
     <MESSAGE value="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color" />
+    <MESSAGE value="feat: ignores entries that were not created by this application" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: ignores entries that were not created by this application" />
   </component>
 </project>

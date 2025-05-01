@@ -9,8 +9,9 @@ documentation https://docs.gitlab.com/ce/user/project/pages/.
 
 <!-- Languages, Frameworks, Libraries, Hosting Platforms, CI/CD, IaC, Scripting languages -->
 
-Gatsby, GatsbyJS, DecapCMS, ReactJS, React, JavaScript, HTML, CSS, GitLab, GitLab Pages, GitLab CI/CD,
-Typescript, Luxon, Moment.js, PWA
+Gatsby, GatsbyJS, DecapCMS, ReactJS, React, JavaScript, HTML, CSS, 
+GitHab, GiHub Pages, Typescript, Luxon, Moment.js, PWA, IDB, 
+IndexedDB, IDB-KeyVal, React Hooks, Yarn 
 
 
 ## 🍎 Requirements
