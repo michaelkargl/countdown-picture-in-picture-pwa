@@ -7,7 +7,9 @@ import { TimerModel } from "../../models"
 import { DateTime } from "luxon"
 
 type EditableProgressBarProps = ProgressBarProps & {
-  timerChanged: (timer: TimerModel) => void
+  timerChanged: (timer: TimerModel) => void,
+  deleteTimerClicked: (timer: TimerModel) => void,
+  saveTimerClicked: (timer: TimerModel) => void
 }
 
 export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
@@ -45,6 +47,8 @@ export const EditableProgressBar: React.FC<EditableProgressBarProps> = (
                 <TimerEditor
                   timer={props.timer}
                   endDateTimeChange={endTimeChanged}
+                  deleteTimerClicked={props.deleteTimerClicked}
+                  saveTimerClicked={props.saveTimerClicked}
                 />
               </Box>
             </Collapsible.Content>

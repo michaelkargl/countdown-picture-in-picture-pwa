@@ -11,7 +11,9 @@ import { Box } from "@chakra-ui/react"
 
 export type TimerProps = {
   timer: TimerModel
-  timerChanged: (timer: Readonly<TimerModel>) => void
+  timerChanged: (timer: Readonly<TimerModel>) => void,
+  deleteTimerClicked: (timer: TimerModel) => void,
+  saveTimerClicked: (timer: TimerModel) => void
 }
 
 export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
@@ -33,6 +35,8 @@ export const Timer: React.FC<TimerProps> = (props: TimerProps) => {
           label={label}
           timer={props.timer}
           timerChanged={timerChanged}
+          deleteTimerClicked={props.deleteTimerClicked}
+          saveTimerClicked={props.saveTimerClicked}
         >
           <ProgressBar
             percentage={0}
