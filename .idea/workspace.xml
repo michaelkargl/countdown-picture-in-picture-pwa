@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8034cc58-14ae-4e9f-aaa2-7d4a85f4e865" name="Changes" comment="feat: adds save and delete&#10;feat: refactors to only refresh on save click&#10;feat: reloads on creation and deletion of elements&#10;feat: assigns each new timer a random chakra color">
+      <change afterPath="$PROJECT_DIR$/src/models/TimerCreateModel.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProgressBar/EditableProgressBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Timer/timer-editor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timer/timer-editor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/TimerDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/TimerDB.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/number-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/number-utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,8 @@
       <list>
         <option value="CSS File" />
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -48,25 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/adds-rxdb-storage&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/BACKUPS/Workspace/react-space/countdown-picture-in-picture-pwa&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "G:/BACKUPS/Workspace/react-space/countdown-picture-in-picture-pwa",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Workspace\\countdown-picture-in-picture-pwa\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Workspace\countdown-picture-in-picture-pwa\scripts" />

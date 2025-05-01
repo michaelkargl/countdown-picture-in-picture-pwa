@@ -15,6 +15,7 @@ import "./index.css"
 import { Box, Button, Color } from "@chakra-ui/react"
 import { DateTime } from "luxon"
 import { ChakraUiUtils } from "../utils/chakra-ui-utils"
+import { TimerCreateModel } from "../models/TimerCreateModel"
 
 const IndexPage = () => {
   const { timerStore } = useContext(TimerDbContext)
@@ -41,16 +42,17 @@ const IndexPage = () => {
   }
 
   async function addNewTimerAsync(): Promise<void> {
-    const timer: TimerModel = {
-      id: crypto.randomUUID(),
+    const timer: TimerCreateModel = {
       startTime: DateTime.now(),
       endTime: DateTime.now().plus({ minute: 1 }),
       refreshIntervalInMs: 1000,
-      name: "new",
+      name: "New Timer",
       color: ChakraUiUtils.getRandomPaletteColor(),
     }
     console.log("Adding new timer", timer)
-    await timerChangedAsync(timer)
+    await timerStore.addTimerAsync(timer);
+    // workaround to automatically start all the timers automatically (some are stuck)
+    pageReload();
   }
 
   async function deleteTimerAsync(timer: TimerModel): Promise<void> {
