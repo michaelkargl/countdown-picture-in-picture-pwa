@@ -5,6 +5,8 @@ Example [Gatsby] website using GitLab Pages.
 Learn more about GitLab Pages at https://pages.gitlab.io and the official
 documentation https://docs.gitlab.com/ce/user/project/pages/.
 
+![](images/screenshot.png)
+
 ## Tags
 
 <!-- Languages, Frameworks, Libraries, Hosting Platforms, CI/CD, IaC, Scripting languages -->
